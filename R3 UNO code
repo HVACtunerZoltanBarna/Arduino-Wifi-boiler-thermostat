@@ -1,0 +1,589 @@
+//R3 Uno code
+
+#define relClose HIGH    //set as your relay works
+#define relOpen LOW
+
+#include <SoftwareSerial.h>
+#include <avr/wdt.h>
+
+// ============ PIN config ============
+const int PIN_ROOM_SENSOR   = A0;
+const int PIN_FLOW_SENSOR   = A1;
+const int PIN_RETURN_SENSOR = A2;
+const int PIN_RELAY         = 6;
+
+const int PIN_RX_FROM_R4    = 2;
+const int PIN_TX_TO_R4      = 3;
+const int PIN_HEARTBEAT_IN  = 7;
+const int PIN_CLOUD_IN      = 8;
+const int PIN_RESET_OUT     = 12;
+const int LEDpin            = 13;
+
+SoftwareSerial linkToR4(PIN_RX_FROM_R4, PIN_TX_TO_R4);
+
+// ============ Measurements ============
+const float ADC_REFERENCE_MV = 1080.0; //!!!Measure your voltage on your Vref pin and modify it accondingly
+const float ADC_STEPS        = 1024.0;
+const float MV_PER_C         = 10.0;
+const float OFFSET_MV        = 500.0;   // MCP9700: 500 ; LM35: 0
+const int   SAMPLES_PER_READ = 10;
+
+// ============ HATÁRÉRTÉKEK ============
+const float FLOW_RETURN_MIN_C = 5.0;
+const float FLOW_RETURN_MAX_C = 80.0;
+const float ROOM_MIN_C        = 5.0;
+const float ROOM_MAX_C        = 30.0;
+
+const float FLOW_OFF_C = 65.0;
+const float FLOW_ON_C  = 55.0;
+
+const float ROOM_HYSTERESIS_C = 0.1;
+
+const float DT_MAX_C = 25.0;
+const float DT_MIN_C = 3.0;
+
+const float RETURN_ABOVE_FLOW_TOLERANCE_C = 1.0;
+
+// ============ Target Filter ============
+const int   TARGET_WINDOW        = 10;
+const int   TARGET_MAJORITY      = 7;
+const float TARGET_MATCH_TOL_C   = 0.05;
+const float TARGET_CHANGE_HYST_C = 0.1;
+
+float targetSamples[TARGET_WINDOW];
+int   targetSampleIdx = 0;
+int   targetSampleCnt = 0;
+
+// ============ Timings ============
+const unsigned long SENSOR_READ_MS       = 500UL;
+const unsigned long SEND_TO_R4_MS        = 5000UL;
+const unsigned long DEBUG_STATUS_MS      = 10000UL;
+const unsigned long MIN_RELAY_OFF_MS     = 15UL * 60 * 1000;
+const unsigned long MIN_RELAY_ON_MS      = 10UL * 1000;
+const unsigned long DT_PROOF_WINDOW_MS   = 10UL * 60 * 1000;
+const unsigned long WEEKLY_MS            = 7UL * 24 * 60 * 60 * 1000;
+const unsigned long PUMP_EXERCISE_MS     = 1000UL;
+const unsigned long HEARTBEAT_TIMEOUT_MS = 2UL * 60 * 1000;
+const unsigned long LEDblink_TIME        = 2000UL;
+const unsigned long CLOUD_TIMEOUT_MS     = 11UL * 60 * 1000;
+
+// Fault 6 time to cloud
+const unsigned long FAULT6_VISIBLE_MS    = MIN_RELAY_OFF_MS - (30UL * 1000);
+
+// ============  ============
+float roomTemp   = 0.0;
+float flowTemp   = 0.0;
+float returnTemp = 0.0;
+
+bool          relayIsOn         = false;
+unsigned long relayTurnedOnAt   = 0;   // amikor ON lett
+unsigned long relayTurnedOffAt  = 0;   // amikor OFF lett
+bool          LEDblinkstate     = false;
+
+int faultCode = 0;
+
+float targetRoomTemp    = 14.0;
+float targetRoomTempNEW = 14.0;
+
+unsigned long lastSensorReadAt = 0;
+unsigned long lastSendToR4At   = 0;
+unsigned long lastDebugAt      = 0;
+unsigned long lastHeartbeatAt  = 0;
+unsigned long lastLEDblink     = 0;
+bool          lastHeartbeatState = false;
+
+unsigned long pumpExerciseStartedAt = 0;
+bool          pumpExerciseRunning   = false;
+
+// Fault 6 
+unsigned long fault6StartedAt = 0;
+bool          fault6Latched   = false;
+
+bool          cloudOkState   = false;
+unsigned long lastCloudOkAt  = 0;
+
+// Counters for debug
+unsigned long rxBytesTotal   = 0;
+unsigned long rxLinesTotal   = 0;
+unsigned long rxTLinesTotal  = 0;
+unsigned long rxTRejected    = 0;
+unsigned long txLinesTotal   = 0;
+unsigned long targetAccepted = 0;
+
+// ============ Presign ============
+int   readAdcMode(int pin);
+float readTemperature(int pin);
+void  updateBoiler();
+void  setRelay(bool turnOn);
+void  checkHeartbeat();
+void  resetR4();
+void  readFromR4();
+void  sendSensorsToR4();
+void  wdtDelay(unsigned long ms);
+float updateTargetFilter(float newValue);
+void  isCloudOK();
+void  blink();
+
+// ============ WDT DELAY ============
+void wdtDelay(unsigned long ms) {
+  unsigned long start = millis();
+  while (millis() - start < ms) {
+    wdt_reset();
+    delay(10);
+  }
+}
+
+// ============ SETUP ============
+void setup() {
+  wdt_enable(WDTO_4S);
+  wdt_reset();
+
+  pinMode(PIN_CLOUD_IN, INPUT);
+  pinMode(PIN_RELAY, OUTPUT);
+  digitalWrite(PIN_RELAY, relOpen);
+  pinMode(LEDpin, OUTPUT);
+  digitalWrite(LEDpin, LOW);
+  pinMode(PIN_HEARTBEAT_IN, INPUT);
+  pinMode(PIN_RESET_OUT, OUTPUT);
+  digitalWrite(PIN_RESET_OUT, HIGH);
+  analogReference(INTERNAL);
+
+  resetR4();
+
+  Serial.begin(9600);
+  delay(200);
+  linkToR4.begin(9600);
+
+  // Filter matrix initialisation
+  for (int i = 0; i < TARGET_WINDOW; i++) targetSamples[i] = 14.0;
+  targetSampleIdx = 0;
+  targetSampleCnt = 0;
+
+  unsigned long now = millis();
+
+  lastSensorReadAt      = now;
+  lastSendToR4At        = now;
+  lastDebugAt           = now;
+  lastHeartbeatAt       = now;
+  lastHeartbeatState    = digitalRead(PIN_HEARTBEAT_IN);
+  lastLEDblink          = now;
+  pumpExerciseStartedAt = now;
+  fault6StartedAt       = now;
+  fault6Latched         = false;
+
+  
+  relayTurnedOffAt = now;
+  relayTurnedOnAt  = now;
+
+  Serial.println(F("[SETUP] minden inicializalva"));
+  Serial.println(F("=== R3 Control setup done ==="));
+}
+
+// ============ LOOP ============
+void loop()
+{
+  wdt_reset();
+  isCloudOK();
+  checkHeartbeat();
+  blink();
+
+  
+  unsigned long onTime  = relayIsOn ? (millis() - relayTurnedOnAt)  : 0;
+  unsigned long offTime = relayIsOn ? 0 : (millis() - relayTurnedOffAt);
+
+  // --- 1. Szenzorok reading, fault code ---
+  if (millis() - lastSensorReadAt >= SENSOR_READ_MS) {
+    lastSensorReadAt = millis();
+
+    roomTemp   = readTemperature(PIN_ROOM_SENSOR);
+    flowTemp   = readTemperature(PIN_FLOW_SENSOR);
+    returnTemp = readTemperature(PIN_RETURN_SENSOR);
+
+    wdt_reset();
+
+    // Faultcode clearing
+    if (faultCode == 0) {
+      if (flowTemp < FLOW_RETURN_MIN_C || flowTemp > FLOW_RETURN_MAX_C) {
+        faultCode = 1;
+        setRelay(false);
+        Serial.print(F("[FAULT] 1 - eloremeno tartomanyon kivul: "));
+        Serial.println(flowTemp, 1);
+      }
+      else if (returnTemp < FLOW_RETURN_MIN_C || returnTemp > FLOW_RETURN_MAX_C) {
+        faultCode = 2;
+        setRelay(false);
+        Serial.print(F("[FAULT] 2 - visszatero tartomanyon kivul: "));
+        Serial.println(returnTemp, 1);
+      }
+      else if (roomTemp < ROOM_MIN_C || roomTemp > ROOM_MAX_C) {
+        faultCode = 3;
+        setRelay(false);
+        Serial.print(F("[FAULT] 3 - szoba tartomanyon kivul: "));
+        Serial.println(roomTemp, 1);
+      }
+      else if (returnTemp > flowTemp + RETURN_ABOVE_FLOW_TOLERANCE_C) {
+        faultCode = 5;
+        setRelay(false);
+        Serial.print(F("[FAULT] 5 - visszatero > eloremeno: B="));
+        Serial.print(returnTemp, 1);
+        Serial.print(F(" F="));
+        Serial.println(flowTemp, 1);
+      }
+      else if ((flowTemp - returnTemp) > DT_MAX_C) {
+        faultCode = 4;
+        setRelay(false);
+        Serial.print(F("[FAULT] 4 - dT tul nagy: "));
+        Serial.println(flowTemp - returnTemp, 1);
+      }
+    }
+  }
+
+  // --- 2. Faultcode clearing Fault 6 latching
+  if (faultCode != 0) {
+    wdt_reset();
+
+    bool sensorsOk =
+      (flowTemp   >= FLOW_RETURN_MIN_C && flowTemp   <= FLOW_RETURN_MAX_C) &&
+      (returnTemp >= FLOW_RETURN_MIN_C && returnTemp <= FLOW_RETURN_MAX_C) &&
+      (roomTemp   >= ROOM_MIN_C        && roomTemp   <= ROOM_MAX_C)        &&
+      (returnTemp <= flowTemp + RETURN_ABOVE_FLOW_TOLERANCE_C) &&
+      ((flowTemp - returnTemp) <= DT_MAX_C);
+
+    if (faultCode == 6) {
+     
+      if (fault6Latched && (millis() - fault6StartedAt >= FAULT6_VISIBLE_MS) && sensorsOk) {
+        Serial.println(F("[FAULT] 6 torolve (lathatosagi ido letelt)"));
+        faultCode     = 0;
+        fault6Latched = false;
+      }
+    }
+    else {
+      
+      if (sensorsOk) {
+        Serial.println(F("[FAULT] torolve, vissza normal uzembe"));
+        faultCode = 0;
+      }
+    }
+  }
+  else {
+    wdt_reset();
+    updateBoiler();
+
+    // Heatproof:
+    if (relayIsOn && onTime >= DT_PROOF_WINDOW_MS) {
+      float dT = flowTemp - returnTemp;
+      if (dT < DT_MIN_C) {
+        faultCode       = 6;
+        fault6StartedAt = millis();
+        fault6Latched   = true;
+        setRelay(false);
+        Serial.println(F("[FAULT] 6 - nincs hoatadas (lathatosagi ido indul)"));
+      }
+    }
+  }
+
+  // --- 3. Weekly pump movements  ---
+  wdt_reset();
+  if (!pumpExerciseRunning) {
+    if ((millis() - relayTurnedOffAt >= WEEKLY_MS) && !relayIsOn && faultCode == 0) {
+      pumpExerciseRunning   = true;
+      pumpExerciseStartedAt = millis();
+      setRelay(true);
+      Serial.println(F("[PUMP] movement START"));
+    }
+  } else {
+    if (millis() - pumpExerciseStartedAt >= PUMP_EXERCISE_MS) {
+      setRelay(false);
+      pumpExerciseRunning = false;
+      Serial.println(F("[PUMP] movement done"));
+    }
+  }
+
+  // --- 4. UART receive from R4 ---
+  wdt_reset();
+  if (cloudOkState) {    readFromR4();}
+    if (cloudOkState) {targetRoomTemp = targetRoomTempNEW;}
+  
+
+  // --- 5. UART transmit to  R4- ---
+  wdt_reset();
+  if (millis() - lastSendToR4At >= SEND_TO_R4_MS) {
+    lastSendToR4At = millis();
+    sendSensorsToR4();
+  }
+
+  // --- 6.  DEBUG summary ---
+  wdt_reset();
+  if (millis() - lastDebugAt >= DEBUG_STATUS_MS) {
+    lastDebugAt = millis();
+    Serial.println(F("---------- [DEBUG STATUS] ----------"));
+    Serial.print(F("  uptime       = ")); Serial.print(millis() / 1000); Serial.println(F(" s"));
+    Serial.print(F("  szoba        = ")); Serial.print(roomTemp, 2);   Serial.println(F(" C"));
+    Serial.print(F("  eloremeno    = ")); Serial.print(flowTemp, 2);   Serial.println(F(" C"));
+    Serial.print(F("  visszatero   = ")); Serial.print(returnTemp, 2); Serial.println(F(" C"));
+    Serial.print(F("  celhomersek  = ")); Serial.print(targetRoomTemp, 2); Serial.println(F(" C"));
+    Serial.print(F("  rele         = ")); Serial.println(relayIsOn ? F("ON") : F("OFF"));
+    Serial.print(F("  onTime       = ")); Serial.println(onTime / 1000);
+    Serial.print(F("  offTime      = ")); Serial.println(offTime / 1000);
+    Serial.print(F("  faultCode    = ")); Serial.println(faultCode);
+    Serial.print(F("  fault6Latched= ")); Serial.println(fault6Latched ? F("YES") : F("NO"));
+    Serial.print(F("  HB bemenet   = ")); Serial.println(digitalRead(PIN_HEARTBEAT_IN) ? F("HIGH") : F("LOW"));
+    Serial.print(F("  RX byte-ok   = ")); Serial.println(rxBytesTotal);
+    Serial.print(F("  RX sorok     = ")); Serial.println(rxLinesTotal);
+    Serial.print(F("  RX T: sorok  = ")); Serial.println(rxTLinesTotal);
+    Serial.print(F("  RX T: kivül  = ")); Serial.println(rxTRejected);
+    Serial.print(F("  TX sorok     = ")); Serial.println(txLinesTotal);
+    Serial.print(F("  cel elfogadva= ")); Serial.println(targetAccepted);
+    Serial.println(F("------------------------------------"));
+  }
+}
+
+// ============ ADC reading ============
+int readAdcMode(int pin) {
+  int samples[SAMPLES_PER_READ];
+  for (int i = 0; i < SAMPLES_PER_READ; i++) {
+    samples[i] = analogRead(pin);
+    delayMicroseconds(200);
+  }
+  int bestValue = samples[0];
+  int bestCount = 0;
+  for (int i = 0; i < SAMPLES_PER_READ; i++) {
+    int count = 0;
+    for (int j = 0; j < SAMPLES_PER_READ; j++) {
+      if (samples[j] == samples[i]) count++;
+    }
+    if (count > bestCount) {
+      bestCount = count;
+      bestValue = samples[i];
+    }
+  }
+  return bestValue;
+}
+
+float readTemperature(int pin) {
+  int raw = readAdcMode(pin);
+  if (raw < 0) return 999.0;
+  float voltage_mV = ((float)raw / ADC_STEPS) * ADC_REFERENCE_MV;
+  return (voltage_mV - OFFSET_MV) / MV_PER_C;
+}
+
+// ============ boiler control ============
+void updateBoiler() {
+  // onTime / offTime lokálisan újraszámolva (a loop-beli érték nem látszik itt)
+  unsigned long onTime  = relayIsOn ? (millis() - relayTurnedOnAt)  : 0;
+  unsigned long offTime = relayIsOn ? 0 : (millis() - relayTurnedOffAt);
+
+  bool roomNeedsHeat;
+  if (roomTemp < targetRoomTemp - ROOM_HYSTERESIS_C)      roomNeedsHeat = true;
+  else if (roomTemp > targetRoomTemp + ROOM_HYSTERESIS_C) roomNeedsHeat = false;
+  else                                                    roomNeedsHeat = relayIsOn;
+
+  bool flowAllowsHeat;
+  if (flowTemp >= FLOW_OFF_C)      flowAllowsHeat = false;
+  else if (flowTemp <= FLOW_ON_C)  flowAllowsHeat = true;
+  else                             flowAllowsHeat = relayIsOn;
+
+  bool shouldHeat = roomNeedsHeat && flowAllowsHeat;
+
+  
+  if (shouldHeat && !relayIsOn) {
+    if (offTime >= MIN_RELAY_OFF_MS) {
+      setRelay(true);
+      Serial.print(F("[BOILER] ON   roomNeeds=")); Serial.print(roomNeedsHeat);
+      Serial.print(F("  flowAllows="));             Serial.print(flowAllowsHeat);
+      Serial.print(F("  target="));                 Serial.println(targetRoomTemp);
+    }
+  }
+
+  
+  if (!shouldHeat && relayIsOn) {
+    if (flowTemp >= FLOW_OFF_C) {
+      setRelay(false);
+      Serial.println(F("[BOILER] OFF (tulmelegedes)"));
+    }
+    else if (onTime >= MIN_RELAY_ON_MS) {
+      setRelay(false);
+      Serial.print(F("[BOILER] OFF  roomNeeds=")); Serial.print(roomNeedsHeat);
+      Serial.print(F("  flowAllows="));             Serial.print(flowAllowsHeat);
+      Serial.print(F("  target="));                 Serial.println(targetRoomTemp);
+    }
+  }
+}
+
+void setRelay(bool turnOn) {
+  if (relayIsOn == turnOn) return;
+
+  relayIsOn = turnOn;
+
+  if (turnOn) {
+    relayTurnedOnAt = millis();
+    digitalWrite(PIN_RELAY, relClose);
+    Serial.println(F("[RELE] BE"));
+  } else {
+    relayTurnedOffAt = millis();
+    digitalWrite(PIN_RELAY, relOpen);
+    Serial.println(F("[RELE] KI "));
+  }
+}
+
+// ============ setponint filter ============
+float updateTargetFilter(float newValue) {
+  targetSamples[targetSampleIdx] = newValue;
+  targetSampleIdx = (targetSampleIdx + 1) % TARGET_WINDOW;
+  if (targetSampleCnt < TARGET_WINDOW) targetSampleCnt++;
+
+  if (targetSampleCnt < TARGET_WINDOW) return NAN;
+
+  int   bestCount = 0;
+  float bestSum   = 0.0;
+  float bestValue = NAN;
+
+  for (int i = 0; i < TARGET_WINDOW; i++) {
+    int   count = 0;
+    float sum   = 0.0;
+    for (int j = 0; j < TARGET_WINDOW; j++) {
+      if (fabs(targetSamples[i] - targetSamples[j]) < TARGET_MATCH_TOL_C) {
+        count++;
+        sum += targetSamples[j];
+      }
+    }
+    if (count > bestCount) {
+      bestCount = count;
+      bestSum   = sum;
+      bestValue = sum / count;   
+    }
+  }
+
+  if (bestCount >= TARGET_MAJORITY) return bestValue;
+  return NAN;
+}
+
+// ============ UART receive (R4 -> R3) ============
+void readFromR4() {
+  static char rxBuffer[32];
+  static uint8_t rxLen = 0;
+
+  while (linkToR4.available()) {
+    char c = linkToR4.read();
+    rxBytesTotal++;
+
+    if (c == '\n') {
+      rxBuffer[rxLen] = '\0';
+
+      if (rxLen > 0) {
+        rxLinesTotal++;
+
+        if (strncmp(rxBuffer, "T:", 2) == 0) {
+          rxTLinesTotal++;
+          float v = atof(rxBuffer + 2);
+          Serial.print(F("[RX] T: sor, ertek = "));
+          Serial.println(v, 2);
+
+          if (v >= 5.0 && v <= 35.0) {
+            float filtered = updateTargetFilter(v);
+
+            if (!isnan(filtered)) {
+              if (fabs(filtered - targetRoomTemp) >= TARGET_CHANGE_HYST_C) {
+                targetRoomTempNEW = filtered;
+                targetAccepted++;
+                Serial.print(F("[RX] *** UJ CELHOMERSEKLET (szurt): "));
+                Serial.println(targetRoomTempNEW, 2);
+              } else {
+                Serial.print(F("[RX] (szurt ertek stabil: "));
+                Serial.print(filtered, 2);
+                Serial.println(F(" C, valtozas < hiszterezis)"));
+              }
+            } else {
+              Serial.println(F("[RX] (nincs meg tobbseg, varok)"));
+            }
+          } else {
+            rxTRejected++;
+            Serial.print(F("[RX] ertek tartomanyon kivul: "));
+            Serial.println(v, 2);
+          }
+        } else {
+          Serial.print(F("[RX] nem T: sor: '"));
+          Serial.print(rxBuffer);
+          Serial.println(F("'"));
+        }
+      }
+      rxLen = 0;
+    } else if (c != '\r') {
+      if (rxLen < sizeof(rxBuffer) - 1) {
+        rxBuffer[rxLen++] = c;
+      } else {
+        Serial.print(F("[RX] buffer tul hosszu, eldobva: '"));
+        Serial.print(rxBuffer);
+        Serial.println(F("'"));
+        rxLen = 0;
+      }
+    }
+  }
+}
+
+// ============ UART transmit (R3 -> R4) ============
+void sendSensorsToR4() {
+  linkToR4.print(F("R:")); linkToR4.println(roomTemp, 1);
+  linkToR4.print(F("F:")); linkToR4.println(flowTemp, 1);
+  linkToR4.print(F("B:")); linkToR4.println(returnTemp, 1);
+  linkToR4.print(F("S:")); linkToR4.println(relayIsOn ? 1 : 0);
+  linkToR4.print(F("E:")); linkToR4.println(faultCode);
+  txLinesTotal += 5;
+
+  Serial.print(F("[TX] R="));  Serial.print(roomTemp, 1);
+  Serial.print(F(" F="));      Serial.print(flowTemp, 1);
+  Serial.print(F(" B="));      Serial.print(returnTemp, 1);
+  Serial.print(F(" S="));      Serial.print(relayIsOn ? 1 : 0);
+  Serial.print(F(" E="));      Serial.println(faultCode);
+}
+
+// ============ hearbeat receive ============
+void checkHeartbeat() {
+  bool currentState = digitalRead(PIN_HEARTBEAT_IN);
+
+  if (currentState != lastHeartbeatState) {
+    lastHeartbeatState = currentState;
+    lastHeartbeatAt    = millis();
+    Serial.print(F("[HB] valtozas: "));
+    Serial.println(currentState ? F("HIGH") : F("LOW"));
+  }
+
+  if (millis() - lastHeartbeatAt >= HEARTBEAT_TIMEOUT_MS) {
+    Serial.println(F("[HB] *** R4 MEGFAGYOTT! Reset kuldese..."));
+    resetR4();
+    lastHeartbeatAt = millis();
+  }
+}
+
+void resetR4() {
+  digitalWrite(PIN_RESET_OUT, LOW);
+  wdtDelay(1000);
+  digitalWrite(PIN_RESET_OUT, HIGH);
+  Serial.println(F("[RESET] R4 reset kesz"));
+}
+
+// --- Cloud ok pin  ---
+void isCloudOK() {
+  bool cloudOk = digitalRead(PIN_CLOUD_IN);
+  if (cloudOk != cloudOkState) {
+    cloudOkState = cloudOk;
+    Serial.print(F("[CLOUD] valtozas: "));
+    Serial.println(cloudOk ? F("ONLINE") : F("OFFLINE"));
+  }
+  if (cloudOk) {
+    lastCloudOkAt = millis();
+  }
+  if (!cloudOk && (millis() - lastCloudOkAt > CLOUD_TIMEOUT_MS)) {
+    Serial.println(F("[CLOUD] offline, R4 reset..."));
+    resetR4();
+    lastCloudOkAt = millis();
+  }
+}
+
+void blink() {
+  if (millis() - lastLEDblink >= LEDblink_TIME) {
+    lastLEDblink  = millis();
+    LEDblinkstate = !LEDblinkstate;
+    digitalWrite(LEDpin, LEDblinkstate);
+  }
+}
