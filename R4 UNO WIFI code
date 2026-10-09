@@ -1,0 +1,294 @@
+/*
+ * Boiler Controller - R4 WiFi (Cloud / Communication board)
+ 
+ * Hardver:
+ *   Serial1 (D0/D1): UART towards R3 
+ 
+ *   D7: heartbeat output 
+ *   D8: Cloud OK output (if SYNC is succesful then is HIGH else LOW)
+ */
+
+#include "thingProperties.h"
+
+// ============ PIN config ============
+
+const int PIN_HEARTBEAT = 7;
+const int PIN_CLOUD_OK  = 8;   // R4 -> R3: Cloud sync
+
+// ============ IDŐZÍTÉSEK ============
+const unsigned long HEARTBEAT_INTERVAL_MS = 500;
+const unsigned long TARGET_SEND_MS        = 2000; //(the all msg 10 times longer, because during filering we use 10 messages).
+const unsigned long DEBUG_STATUS_MS       = 5000;
+const unsigned long CLOUD_UPDATE_MS       = 1000;
+const unsigned long CLOUD_UPLOAD_MS       = 5000;
+const unsigned long CLOUD_SELF_RESET_MS   = 5UL * 60 * 1000;   // 5 minutes
+
+// ============  ============
+float roomTemp   = 0.0;
+float flowTemp   = 0.0;
+float returnTemp = 0.0;
+bool  relayIsOn  = false;
+int   faultCode  = 0;
+float targetRoomTemp = 14.0;
+
+// Cloud status
+bool          cloudSynced        = false;
+unsigned long lastCloudSyncAt    = 0;
+
+unsigned long lastHeartbeatAt = 0;
+bool heartbeatState = false;
+
+unsigned long lastTargetSendAt = 0;
+unsigned long lastDebugAt      = 0;
+
+unsigned long lastCloudUpdateAt = 0;
+unsigned long lastCloudUploadAt = 0;
+
+String rxBuffer = "";
+
+// counters
+unsigned long rxBytesTotal  = 0;
+unsigned long rxLinesTotal  = 0;
+unsigned long txTargetCount = 0;
+
+// ============ CLOUD CALLBACKEK ============
+void onCloudConnect() {
+  Serial.println(F("[CLOUD] CONNECT esemeny"));
+}
+
+void onCloudSync() {
+  Serial.println(F("[CLOUD] *** SYNC esemeny: adatok szinkronizalva ***"));
+  cloudSynced = true;
+  lastCloudSyncAt = millis();
+  digitalWrite(PIN_CLOUD_OK, HIGH);
+}
+
+void onCloudDisconnect() {
+  Serial.println(F("[CLOUD] DISCONNECT esemeny"));
+  cloudSynced = false;
+  digitalWrite(PIN_CLOUD_OK, LOW);
+}
+
+// ============ SETUP ============
+void setup() {
+  Serial.begin(9600);
+  delay(200);
+
+  Serial.println();
+  Serial.println(F("########################################"));
+  Serial.println(F("# R4 WiFi - DEBUG INDUL"));
+  Serial.println(F("########################################"));
+
+
+  Serial.print(F("[SETUP] HB ki   = D")); Serial.println(PIN_HEARTBEAT);
+  Serial.print(F("[SETUP] Cloud OK= D")); Serial.println(PIN_CLOUD_OK);
+  Serial.println(F("[SETUP] Serial1 = D0 (RX), D1 (TX)"));
+
+  Serial1.begin(9600);
+  Serial.println(F("[SETUP] Serial1 elindult (9600)"));
+
+  
+  pinMode(PIN_HEARTBEAT, OUTPUT);
+  pinMode(PIN_CLOUD_OK, OUTPUT);
+
+  
+  digitalWrite(PIN_HEARTBEAT, LOW);
+  digitalWrite(PIN_CLOUD_OK, LOW);   // amíg nincs SYNC, LOW
+  Serial.println(F("[SETUP] , HB = LOW, CloudOK = LOW"));
+
+  Serial.println(F("[SETUP] Cloud init..."));
+  initProperties();
+  Serial.println(F("[SETUP] initProperties kesz"));
+
+  // Cloud events callback registration
+  ArduinoCloud.addCallback(ArduinoIoTCloudEvent::CONNECT, onCloudConnect);
+  ArduinoCloud.addCallback(ArduinoIoTCloudEvent::SYNC, onCloudSync);
+  ArduinoCloud.addCallback(ArduinoIoTCloudEvent::DISCONNECT, onCloudDisconnect);
+  Serial.println(F("[SETUP] Cloud callbackek regisztralva"));
+
+  ArduinoCloud.begin(ArduinoIoTPreferredConnection, false);
+  Serial.println(F("[SETUP] ArduinoCloud.begin kesz"));
+
+  setDebugMessageLevel(2);
+  ArduinoCloud.printDebugInfo();
+  Serial.println(F("[SETUP] Cloud debug info kiirva"));
+
+  lastCloudUpdateAt = millis();
+  lastCloudUploadAt = millis();
+  lastHeartbeatAt   = millis();
+  lastTargetSendAt  = millis();
+  lastDebugAt       = millis();
+  lastCloudSyncAt   = millis();
+
+  Serial.println(F("=== R4 WiFi setup done ==="));
+  Serial.println();
+}
+
+// ============ LOOP ============
+void loop() {
+  // --- 1. heartbeat ---
+  if (millis() - lastHeartbeatAt >= HEARTBEAT_INTERVAL_MS) {
+    lastHeartbeatAt = millis();
+    heartbeatState = !heartbeatState;
+    digitalWrite(PIN_HEARTBEAT, heartbeatState ? HIGH : LOW);
+  }
+
+ 
+
+  // --- 4. Cloud upload ---
+  if (millis() - lastCloudUploadAt >= CLOUD_UPLOAD_MS) {
+    lastCloudUploadAt = millis();
+    uploadToCloud();
+  }
+
+  // --- 5. Cloud update ---
+  if (millis() - lastCloudUpdateAt >= CLOUD_UPDATE_MS) {
+    lastCloudUpdateAt = millis();
+    ArduinoCloud.update();
+  }
+
+  // --- 6. Cloud if no sync, R4 self reset ---
+  if (!cloudSynced && millis() - lastCloudSyncAt > CLOUD_SELF_RESET_MS) {
+    Serial.println(F("[CLOUD] 5 percig nincs SYNC, self reset..."));
+    NVIC_SystemReset();
+  }
+
+ // --- 2. UART receive from R3 ---
+  readFromR3();
+
+  updateFaultString();
+
+  // --- 3. Setpoint transmit  towards  R3 ---
+  sendTargetToR3();
+
+  
+  // --- 8.  DEBUG summary ---
+  if (millis() - lastDebugAt >= DEBUG_STATUS_MS) {
+    lastDebugAt = millis();
+    Serial.println(F("---------- [DEBUG STATUS] ----------"));
+    Serial.print(F("  uptime       = ")); Serial.print(millis() / 1000); Serial.println(F(" s"));
+    Serial.print(F("  szoba        = ")); Serial.print(roomTemp, 2);   Serial.println(F(" C"));
+    Serial.print(F("  eloremeno    = ")); Serial.print(flowTemp, 2);   Serial.println(F(" C"));
+    Serial.print(F("  visszatero   = ")); Serial.print(returnTemp, 2); Serial.println(F(" C"));
+    Serial.print(F("  rele         = ")); Serial.println(relayIsOn ? F("ON") : F("OFF"));
+    Serial.print(F("  faultCode    = ")); Serial.println(faultCode);
+    Serial.print(F("  celhomersek  = ")); Serial.print(targetRoomTemp, 2); Serial.println(F(" C"));
+    Serial.print(F("  cloudSynced  = ")); Serial.println(cloudSynced ? F("YES") : F("NO"));
+    
+    Serial.print(F("  RX byte-ok   = ")); Serial.println(rxBytesTotal);
+    Serial.print(F("  RX sorok     = ")); Serial.println(rxLinesTotal);
+    Serial.print(F("  TX celok     = ")); Serial.println(txTargetCount);
+    Serial.println(F("------------------------------------"));
+  }
+}
+
+// ============ UART receive (R3 -> R4) ============
+void readFromR3() {
+  while (Serial1.available()) {
+    char c = Serial1.read();
+    rxBytesTotal++;
+
+    if (c == '\n') {
+      Serial.print(F("[RX] sor vege. Buffer = '"));
+      Serial.print(rxBuffer);
+      Serial.println(F("'"));
+
+      if (rxBuffer.length() > 0) {
+        rxLinesTotal++;
+        parseMessage(rxBuffer);
+      }
+      rxBuffer = "";
+    } else if (c != '\r') {
+      rxBuffer += c;
+      if (rxBuffer.length() > 32) {
+        Serial.print(F("[RX] buffer tul hosszu, eldobva: '"));
+        Serial.print(rxBuffer);
+        Serial.println(F("'"));
+        rxBuffer = "";
+      }
+    }
+  }
+}
+
+// ============ ÜZENET FELDOLGOZÁS ============
+void parseMessage(String &msg) {
+  if (msg.startsWith("R:")) {
+    float v = msg.substring(2).toFloat();
+    if (v >= -10.0 && v <= 40.0) {
+      roomTemp = v;
+    }
+  }
+  else if (msg.startsWith("F:")) {
+    float v = msg.substring(2).toFloat();
+    if (v >= -10.0 && v <= 100.0) flowTemp = v;
+  }
+  else if (msg.startsWith("B:")) {
+    float v = msg.substring(2).toFloat();
+    if (v >= -10.0 && v <= 100.0) returnTemp = v;
+  }
+  else if (msg.startsWith("S:")) {
+    int v = msg.substring(2).toInt();
+    if (v == 0 || v == 1) relayIsOn = (v == 1);
+  }
+  else if (msg.startsWith("E:")) {
+    int v = msg.substring(2).toInt();
+    if (v >= 0 && v <= 6) faultCode = v;
+  }
+}
+
+// ============ setpoint transission (R4 -> R3) ============
+void sendTargetToR3() {
+  if (!cloudSynced) return;              // ← csak SYNC után küld
+  if (millis() - lastTargetSendAt < TARGET_SEND_MS) return;
+  lastTargetSendAt = millis();
+  Serial1.print(F("T:"));
+  Serial1.println(targetRoomTemp, 1);
+  txTargetCount++;
+}
+
+// ============ CLOUD FELTÖLTÉS ============
+void uploadToCloud() {
+  actualRoomTemp = roomTemp;
+}
+
+// ============ CLOUD CALLBACK (setpoint) ============
+void onTargetRoomTempCloudChange() {
+  float t = targetRoomTempCloud;
+  Serial.print(F("[CLOUD] uj celertek erkezett: "));
+  Serial.println(t, 2);
+
+  if (t >= 5.0 && t <= 35.0) {
+    targetRoomTemp = t;
+    Serial.print(F("[CLOUD] elfogadva: "));
+    Serial.println(targetRoomTemp, 2);
+  } else {
+    Serial.print(F("[CLOUD] elutasitva (tartomanyon kivul): "));
+    Serial.println(t, 2);
+  }
+}
+
+// ============ FAULT CODE -> STRING ============
+String faultCodeToString(int code) {
+  switch (code) {
+    case 0: return "SYS_GOOD";
+    case 1: return "ERR_FLOW_SENSOR";
+    case 2: return "ERR_RETURN_SENSOR";
+    case 3: return "ERR_ROOM_SENSOR";
+    case 4: return "ERR_DT_TOO_BIG";
+    case 5: return "ERR_RETURN_ABOVE_FLOW";
+    case 6: return "ERR_NO_HEAT_TRANSFER";
+    default: return "ERR_UNKNOWN";
+  }
+}
+
+// ============ FAULT STRING refresh ============
+// only sends if there is change.
+void updateFaultString() {
+  String newSTR = faultCodeToString(faultCode);
+
+  if (newSTR != faultCodeSTR) {
+    faultCodeSTR = newSTR;                 
+    Serial.print(F("[CLOUD] faultCodeSTR refreshed: "));
+    Serial.println(faultCodeSTR);
+  }
+}
