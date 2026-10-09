@@ -1,0 +1,7668 @@
+(kicad_sch
+	(version 20260306)
+	(generator "eeschema")
+	(generator_version "10.0")
+	(uuid "8ace7278-3313-4739-81ad-ae648dd0145c")
+	(paper "A3")
+	(lib_symbols
+		(symbol "Comparator:LM393"
+			(pin_names
+				(offset 0.127)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "U"
+				(at 3.81 3.81 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "LM393"
+				(at 6.35 -3.81 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Datasheet" "http://www.ti.com/lit/ds/symlink/lm393.pdf"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Description" "Low-Power, Low-Offset Voltage, Dual Comparators, DIP-8/SOIC-8/TO-99-8"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_locked" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_keywords" "cmp open collector"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_fp_filters" "SOIC*3.9x4.9mm*P1.27mm* DIP*W7.62mm* SOP*5.28x5.23mm*P1.27mm* VSSOP*3x3mm*P0.65mm* TSSOP*4.4x3mm*P0.65mm*"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "LM393_1_1"
+				(polyline
+					(pts
+						(xy -5.08 5.08) (xy 5.08 0) (xy -5.08 -5.08) (xy -5.08 5.08)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type background)
+					)
+				)
+				(polyline
+					(pts
+						(xy 3.302 -0.508) (xy 2.794 -0.508) (xy 3.302 0) (xy 2.794 0.508) (xy 2.286 0) (xy 2.794 -0.508)
+						(xy 2.286 -0.508)
+					)
+					(stroke
+						(width 0.127)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(pin open_collector line
+					(at 7.62 0 180)
+					(length 2.54)
+					(name ""
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin input line
+					(at -7.62 -2.54 0)
+					(length 2.54)
+					(name "-"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin input line
+					(at -7.62 2.54 0)
+					(length 2.54)
+					(name "+"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "3"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(symbol "LM393_2_1"
+				(polyline
+					(pts
+						(xy -5.08 5.08) (xy 5.08 0) (xy -5.08 -5.08) (xy -5.08 5.08)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type background)
+					)
+				)
+				(polyline
+					(pts
+						(xy 3.302 -0.508) (xy 2.794 -0.508) (xy 3.302 0) (xy 2.794 0.508) (xy 2.286 0) (xy 2.794 -0.508)
+						(xy 2.286 -0.508)
+					)
+					(stroke
+						(width 0.127)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(pin input line
+					(at -7.62 2.54 0)
+					(length 2.54)
+					(name "+"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "5"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin input line
+					(at -7.62 -2.54 0)
+					(length 2.54)
+					(name "-"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "6"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin open_collector line
+					(at 7.62 0 180)
+					(length 2.54)
+					(name ""
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "7"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(symbol "LM393_3_1"
+				(pin power_in line
+					(at -2.54 -7.62 90)
+					(length 3.81)
+					(name "V-"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "4"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin power_in line
+					(at -2.54 7.62 270)
+					(length 3.81)
+					(name "V+"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "8"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
+		(symbol "Connector:Screw_Terminal_01x03"
+			(pin_names
+				(offset 1.016)
+				(hide yes)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "J"
+				(at 0 5.08 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "Screw_Terminal_01x03"
+				(at 0 -5.08 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Description" "Generic screw terminal, single row, 01x03, script generated (kicad-library-utils/schlib/autogen/connector/)"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_keywords" "screw terminal"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_fp_filters" "TerminalBlock*:*"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "Screw_Terminal_01x03_1_1"
+				(rectangle
+					(start -1.27 3.81)
+					(end 1.27 -3.81)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type background)
+					)
+				)
+				(polyline
+					(pts
+						(xy -0.5334 2.8702) (xy 0.3302 2.032)
+					)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -0.5334 0.3302) (xy 0.3302 -0.508)
+					)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -0.5334 -2.2098) (xy 0.3302 -3.048)
+					)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -0.3556 3.048) (xy 0.508 2.2098)
+					)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -0.3556 0.508) (xy 0.508 -0.3302)
+					)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -0.3556 -2.032) (xy 0.508 -2.8702)
+					)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(circle
+					(center 0 2.54)
+					(radius 0.635)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(circle
+					(center 0 0)
+					(radius 0.635)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(circle
+					(center 0 -2.54)
+					(radius 0.635)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(pin passive line
+					(at -5.08 2.54 0)
+					(length 3.81)
+					(name "Pin_1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at -5.08 0 0)
+					(length 3.81)
+					(name "Pin_2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at -5.08 -2.54 0)
+					(length 3.81)
+					(name "Pin_3"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "3"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
+		(symbol "Converter_ACDC:TMLM04109"
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "U"
+				(at 0 6.35 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "TMLM04109"
+				(at 0 -6.35 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" "Converter_ACDC:Converter_ACDC_TRACO_TMLM-04_THT"
+				(at 0 -8.89 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Datasheet" "https://www.tracopower.com/products/tmlm.pdf"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Description" "9V 444mA AC/DC low noise power module"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_keywords" "Traco Power 4W AC-DC module power supply"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_fp_filters" "Converter*ACDC*TRACO*TMLM*04*"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "TMLM04109_0_1"
+				(rectangle
+					(start -7.62 5.08)
+					(end 7.62 -5.08)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type background)
+					)
+				)
+				(polyline
+					(pts
+						(xy -5.334 -0.635) (xy -2.794 -0.635)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(arc
+					(start -4.064 0.635)
+					(mid -4.699 0.2495)
+					(end -5.334 0.635)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(arc
+					(start -4.064 0.635)
+					(mid -3.429 1.0072)
+					(end -2.794 0.635)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 5.08) (xy 0 3.81)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 2.54) (xy 0 1.27)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 0) (xy 0 -1.27)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 -2.54) (xy 0 -3.81)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 2.794 0.635) (xy 3.302 0.635)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 2.794 -0.635) (xy 5.334 -0.635)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 3.81 0.635) (xy 4.318 0.635)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 4.826 0.635) (xy 5.334 0.635)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "TMLM04109_1_1"
+				(pin power_out line
+					(at 10.16 2.54 180)
+					(length 2.54)
+					(name "Vout+"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin power_out line
+					(at 10.16 -2.54 180)
+					(length 2.54)
+					(name "Vout-"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "3"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin power_in line
+					(at -10.16 2.54 0)
+					(length 2.54)
+					(name "AC(L)"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "5"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin power_in line
+					(at -10.16 -2.54 0)
+					(length 2.54)
+					(name "AC(N)"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "6"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
+		(symbol "Device:C"
+			(pin_numbers
+				(hide yes)
+			)
+			(pin_names
+				(offset 0.254)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "C"
+				(at 0.635 2.54 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+				)
+			)
+			(property "Value" "C"
+				(at 0.635 -2.54 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+				)
+			)
+			(property "Footprint" ""
+				(at 0.9652 -3.81 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Description" "Unpolarized capacitor"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_keywords" "cap capacitor"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_fp_filters" "C_*"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "C_0_1"
+				(polyline
+					(pts
+						(xy -2.032 0.762) (xy 2.032 0.762)
+					)
+					(stroke
+						(width 0.508)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -2.032 -0.762) (xy 2.032 -0.762)
+					)
+					(stroke
+						(width 0.508)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "C_1_1"
+				(pin passive line
+					(at 0 3.81 270)
+					(length 2.794)
+					(name ""
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 0 -3.81 90)
+					(length 2.794)
+					(name ""
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
+		(symbol "Device:D"
+			(pin_numbers
+				(hide yes)
+			)
+			(pin_names
+				(offset 1.016)
+				(hide yes)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "D"
+				(at 0 2.54 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "D"
+				(at 0 -2.54 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Description" "Diode"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Sim.Device" "D"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Sim.Pins" "1=K 2=A"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_keywords" "diode"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_fp_filters" "TO-???* *_Diode_* *SingleDiode* D_*"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "D_0_1"
+				(polyline
+					(pts
+						(xy -1.27 1.27) (xy -1.27 -1.27)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 1.27 1.27) (xy 1.27 -1.27) (xy -1.27 0) (xy 1.27 1.27)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 1.27 0) (xy -1.27 0)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "D_1_1"
+				(pin passive line
+					(at -3.81 0 0)
+					(length 2.54)
+					(name "K"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 3.81 0 180)
+					(length 2.54)
+					(name "A"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
+		(symbol "Device:Fuse"
+			(pin_numbers
+				(hide yes)
+			)
+			(pin_names
+				(offset 0)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "F"
+				(at 2.032 0 90)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "Fuse"
+				(at -1.905 0 90)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at -1.778 0 90)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Description" "Fuse"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_keywords" "fuse"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_fp_filters" "*Fuse*"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "Fuse_0_1"
+				(rectangle
+					(start -0.762 -2.54)
+					(end 0.762 2.54)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 2.54) (xy 0 -2.54)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "Fuse_1_1"
+				(pin passive line
+					(at 0 3.81 270)
+					(length 1.27)
+					(name ""
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 0 -3.81 90)
+					(length 1.27)
+					(name ""
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
+		(symbol "Device:R"
+			(pin_numbers
+				(hide yes)
+			)
+			(pin_names
+				(offset 0)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "R"
+				(at 2.032 0 90)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "R"
+				(at 0 0 90)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at -1.778 0 90)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Description" "Resistor"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_keywords" "R res resistor"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_fp_filters" "R_*"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "R_0_1"
+				(rectangle
+					(start -1.016 -2.54)
+					(end 1.016 2.54)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "R_1_1"
+				(pin passive line
+					(at 0 3.81 270)
+					(length 1.27)
+					(name ""
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 0 -3.81 90)
+					(length 1.27)
+					(name ""
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
+		(symbol "Diode:1N5818"
+			(pin_numbers
+				(hide yes)
+			)
+			(pin_names
+				(offset 1.016)
+				(hide yes)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "D"
+				(at 0 2.54 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "1N5818"
+				(at 0 -2.54 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" "Diode_THT:D_DO-41_SOD81_P10.16mm_Horizontal"
+				(at 0 -4.445 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Datasheet" "http://www.vishay.com/docs/88525/1n5817.pdf"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Description" "30V 1A Schottky Barrier Rectifier Diode, DO-41"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_keywords" "diode Schottky"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_fp_filters" "D*DO?41*"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "1N5818_0_1"
+				(polyline
+					(pts
+						(xy -1.905 0.635) (xy -1.905 1.27) (xy -1.27 1.27) (xy -1.27 -1.27) (xy -0.635 -1.27) (xy -0.635 -0.635)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 1.27 1.27) (xy 1.27 -1.27) (xy -1.27 0) (xy 1.27 1.27)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 1.27 0) (xy -1.27 0)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "1N5818_1_1"
+				(pin passive line
+					(at -3.81 0 0)
+					(length 2.54)
+					(name "K"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 3.81 0 180)
+					(length 2.54)
+					(name "A"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
+		(symbol "Diode:BZV55B3V9"
+			(pin_numbers
+				(hide yes)
+			)
+			(pin_names
+				(hide yes)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "D"
+				(at 0 2.54 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "BZV55B3V9"
+				(at 0 -2.54 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" "Diode_SMD:D_MiniMELF"
+				(at 0 -4.445 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Datasheet" "https://assets.nexperia.com/documents/data-sheet/BZV55_SER.pdf"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Description" "3.9V, 500mW, 2%, Zener diode, MiniMELF"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_keywords" "zener diode"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_fp_filters" "D*MiniMELF*"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "BZV55B3V9_0_1"
+				(polyline
+					(pts
+						(xy -1.27 -1.27) (xy -1.27 1.27) (xy -0.762 1.27)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 1.27 0) (xy -1.27 0)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 1.27 -1.27) (xy 1.27 1.27) (xy -1.27 0) (xy 1.27 -1.27)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "BZV55B3V9_1_1"
+				(pin passive line
+					(at -3.81 0 0)
+					(length 2.54)
+					(name "K"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 3.81 0 180)
+					(length 2.54)
+					(name "A"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
+		(symbol "Diode:BZV55B4V7"
+			(pin_numbers
+				(hide yes)
+			)
+			(pin_names
+				(hide yes)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "D"
+				(at 0 2.54 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "BZV55B4V7"
+				(at 0 -2.54 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" "Diode_SMD:D_MiniMELF"
+				(at 0 -4.445 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Datasheet" "https://assets.nexperia.com/documents/data-sheet/BZV55_SER.pdf"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Description" "4.7V, 500mW, 2%, Zener diode, MiniMELF"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_keywords" "zener diode"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_fp_filters" "D*MiniMELF*"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "BZV55B4V7_0_1"
+				(polyline
+					(pts
+						(xy -1.27 -1.27) (xy -1.27 1.27) (xy -0.762 1.27)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 1.27 0) (xy -1.27 0)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 1.27 -1.27) (xy 1.27 1.27) (xy -1.27 0) (xy 1.27 -1.27)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "BZV55B4V7_1_1"
+				(pin passive line
+					(at -3.81 0 0)
+					(length 2.54)
+					(name "K"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 3.81 0 180)
+					(length 2.54)
+					(name "A"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
+		(symbol "MCU_Module:Arduino_UNO_R3"
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "A"
+				(at -10.16 23.495 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left bottom)
+				)
+			)
+			(property "Value" "Arduino_UNO_R3"
+				(at 5.08 -26.67 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+				)
+			)
+			(property "Footprint" "Module:Arduino_UNO_R3"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(italic yes)
+					)
+				)
+			)
+			(property "Datasheet" "https://www.arduino.cc/en/Main/arduinoBoardUno"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Description" "Arduino UNO Microcontroller Module, release 3"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_keywords" "Arduino UNO R3 Microcontroller Module Atmel AVR USB"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_fp_filters" "Arduino*UNO*R3*"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "Arduino_UNO_R3_0_1"
+				(rectangle
+					(start -10.16 22.86)
+					(end 10.16 -25.4)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type background)
+					)
+				)
+			)
+			(symbol "Arduino_UNO_R3_1_1"
+				(pin no_connect line
+					(at -10.16 -20.32 0)
+					(length 2.54)
+					(hide yes)
+					(name "NC"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin output line
+					(at 12.7 10.16 180)
+					(length 2.54)
+					(name "IOREF"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin input line
+					(at 12.7 15.24 180)
+					(length 2.54)
+					(name "~{RESET}"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "3"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin power_out line
+					(at 2.54 25.4 270)
+					(length 2.54)
+					(name "3V3"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "4"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin power_out line
+					(at 5.08 25.4 270)
+					(length 2.54)
+					(name "+5V"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "5"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin power_in line
+					(at 0 -27.94 90)
+					(length 2.54)
+					(name "GND"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "6"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin power_in line
+					(at 2.54 -27.94 90)
+					(length 2.54)
+					(name "GND"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "7"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin power_in line
+					(at -2.54 25.4 270)
+					(length 2.54)
+					(name "VIN"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "8"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin bidirectional line
+					(at 12.7 0 180)
+					(length 2.54)
+					(name "A0"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "9"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin bidirectional line
+					(at 12.7 -2.54 180)
+					(length 2.54)
+					(name "A1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "10"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin bidirectional line
+					(at 12.7 -5.08 180)
+					(length 2.54)
+					(name "A2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "11"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin bidirectional line
+					(at 12.7 -7.62 180)
+					(length 2.54)
+					(name "A3"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "12"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin bidirectional line
+					(at 12.7 -10.16 180)
+					(length 2.54)
+					(name "SDA/A4"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "13"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin bidirectional line
+					(at 12.7 -12.7 180)
+					(length 2.54)
+					(name "SCL/A5"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "14"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin bidirectional line
+					(at -12.7 15.24 0)
+					(length 2.54)
+					(name "D0/RX"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "15"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin bidirectional line
+					(at -12.7 12.7 0)
+					(length 2.54)
+					(name "D1/TX"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "16"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin bidirectional line
+					(at -12.7 10.16 0)
+					(length 2.54)
+					(name "D2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "17"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin bidirectional line
+					(at -12.7 7.62 0)
+					(length 2.54)
+					(name "D3"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "18"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin bidirectional line
+					(at -12.7 5.08 0)
+					(length 2.54)
+					(name "D4"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "19"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin bidirectional line
+					(at -12.7 2.54 0)
+					(length 2.54)
+					(name "D5"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "20"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin bidirectional line
+					(at -12.7 0 0)
+					(length 2.54)
+					(name "D6"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "21"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin bidirectional line
+					(at -12.7 -2.54 0)
+					(length 2.54)
+					(name "D7"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "22"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin bidirectional line
+					(at -12.7 -5.08 0)
+					(length 2.54)
+					(name "D8"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "23"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin bidirectional line
+					(at -12.7 -7.62 0)
+					(length 2.54)
+					(name "D9"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "24"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin bidirectional line
+					(at -12.7 -10.16 0)
+					(length 2.54)
+					(name "D10"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "25"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin bidirectional line
+					(at -12.7 -12.7 0)
+					(length 2.54)
+					(name "D11"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "26"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin bidirectional line
+					(at -12.7 -15.24 0)
+					(length 2.54)
+					(name "D12"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "27"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin bidirectional line
+					(at -12.7 -17.78 0)
+					(length 2.54)
+					(name "D13"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "28"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin power_in line
+					(at -2.54 -27.94 90)
+					(length 2.54)
+					(name "GND"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "29"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin input line
+					(at 12.7 5.08 180)
+					(length 2.54)
+					(name "AREF"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "30"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin bidirectional line
+					(at 12.7 -17.78 180)
+					(length 2.54)
+					(name "SDA/A4"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "31"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin bidirectional line
+					(at 12.7 -20.32 180)
+					(length 2.54)
+					(name "SCL/A5"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "32"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
+		(symbol "Sensor_Temperature:LM35-LP"
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "U"
+				(at -6.35 6.35 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "LM35-LP"
+				(at 1.27 6.35 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+				)
+			)
+			(property "Footprint" "Package_TO_SOT_THT:TO-92_Inline"
+				(at 1.27 -6.35 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+				)
+			)
+			(property "Datasheet" "http://www.ti.com/lit/ds/symlink/lm35.pdf"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Description" "Precision centigrade temperature sensor, TO-92"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_keywords" "temperature sensor thermistor"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_fp_filters" "TO?92*"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "LM35-LP_0_1"
+				(rectangle
+					(start -7.62 5.08)
+					(end 7.62 -5.08)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type background)
+					)
+				)
+				(polyline
+					(pts
+						(xy -5.08 3.175) (xy -5.08 0)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -5.08 3.175) (xy -4.445 3.175)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -5.08 2.54) (xy -4.445 2.54)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -5.08 1.905) (xy -4.445 1.905)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -5.08 1.27) (xy -4.445 1.27)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -5.08 0.635) (xy -4.445 0.635)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(arc
+					(start -5.08 3.175)
+					(mid -4.445 3.8073)
+					(end -3.81 3.175)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(circle
+					(center -4.445 -2.54)
+					(radius 1.27)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type outline)
+					)
+				)
+				(polyline
+					(pts
+						(xy -3.81 3.175) (xy -3.81 0)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(rectangle
+					(start -3.81 -1.905)
+					(end -5.08 0)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type outline)
+					)
+				)
+			)
+			(symbol "LM35-LP_1_1"
+				(pin power_in line
+					(at 0 7.62 270)
+					(length 2.54)
+					(name "+V_{S}"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin output line
+					(at 10.16 0 180)
+					(length 2.54)
+					(name "V_{OUT}"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin power_in line
+					(at 0 -7.62 90)
+					(length 2.54)
+					(name "GND"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "3"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
+	)
+	(text "F315mA"
+		(exclude_from_sim no)
+		(at 62.484 17.272 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "096d76d3-765e-4549-89e7-7319656dcc73")
+	)
+	(text "to relay board \n(max 20mA signal current)"
+		(exclude_from_sim no)
+		(at 261.112 82.804 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "32c0b61d-b8d7-4bbc-886e-670f086cda10")
+	)
+	(text "F100mA"
+		(exclude_from_sim no)
+		(at 30.988 42.418 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "3e4cac85-b1af-4b04-a633-6eef2efa7d81")
+	)
+	(text "Brownout detector circuit"
+		(exclude_from_sim no)
+		(at 138.684 108.712 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "6176890d-dbf1-40f0-975b-0d9290ac7188")
+	)
+	(junction
+		(at 101.6 19.05)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "1b8cddcf-7c2c-443f-91a4-9e5a3806627c")
+	)
+	(junction
+		(at 46.99 121.92)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "1fe02590-a1dd-4d2a-8e0d-1e433ac626d8")
+	)
+	(junction
+		(at 227.33 66.04)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "235948e6-45b6-4977-8ed7-44e69cba23ec")
+	)
+	(junction
+		(at 227.33 48.26)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "3acccefe-c1c8-4b97-aa7d-da481ccfb73a")
+	)
+	(junction
+		(at 55.88 64.77)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "41c556bf-7080-48e7-892e-6dace186672b")
+	)
+	(junction
+		(at 69.85 99.06)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "5378ba8d-2237-499d-9360-5698504d782f")
+	)
+	(junction
+		(at 201.93 36.83)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "608e0844-7383-437f-b145-79f9c7a303db")
+	)
+	(junction
+		(at 60.96 105.41)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "6e81ad5e-a8f6-40e3-a5ff-976eeec3604d")
+	)
+	(junction
+		(at 198.12 74.93)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "7989ce96-1992-4c0a-8000-01d6873e88ec")
+	)
+	(junction
+		(at 77.47 99.06)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "7c38ea31-fb35-4700-8da5-fee18d0a2495")
+	)
+	(junction
+		(at 201.93 74.93)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "842addd7-e329-45bc-86c2-f6b07f76d66f")
+	)
+	(junction
+		(at 58.42 99.06)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "902a5d74-ed71-410d-be4d-61c5083a9fc8")
+	)
+	(junction
+		(at 101.6 107.95)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "93170446-c381-4baa-a131-21a83495e5c2")
+	)
+	(junction
+		(at 116.84 88.9)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "986a164a-0790-4b10-b2ff-a723dd1f9c18")
+	)
+	(junction
+		(at 71.12 64.77)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "9b09f419-1d56-4bbc-b196-fcd41f0c767a")
+	)
+	(junction
+		(at 227.33 29.21)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "a15c2097-bea5-4476-a820-f5790aba0514")
+	)
+	(junction
+		(at 227.33 21.59)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "a2168b57-47a5-4c3e-8e24-d3cd566c997c")
+	)
+	(junction
+		(at 227.33 58.42)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "a5347deb-f038-4216-b483-96674ceeeee6")
+	)
+	(junction
+		(at 271.78 12.7)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "a6b04f26-3a7b-4c72-93d2-68867bf9a867")
+	)
+	(junction
+		(at 212.09 60.96)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "ba3e0801-b0b8-4416-bf7f-713ff3a02ee1")
+	)
+	(junction
+		(at 46.99 99.06)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "c3ca2906-9b50-404c-b3d9-7c19dce053da")
+	)
+	(junction
+		(at 71.12 19.05)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "c8d31d40-31a9-401c-9bdf-0af714c90359")
+	)
+	(junction
+		(at 201.93 19.05)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "cdb20f89-ac87-444e-b69a-5aa9f741cf86")
+	)
+	(junction
+		(at 212.09 41.91)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "cf4c0d0b-87d7-4b9c-9a1b-809bff0fbeaf")
+	)
+	(junction
+		(at 101.6 121.92)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "d66950f1-e96e-4e7c-8b81-547021f2aa5b")
+	)
+	(junction
+		(at 46.99 110.49)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "da341eeb-c008-4df0-9c39-65425c57bcaa")
+	)
+	(junction
+		(at 83.82 107.95)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "eab942be-7344-4476-a333-9f22db9e96f7")
+	)
+	(junction
+		(at 69.85 121.92)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "f0e3f80a-f98e-471e-ab07-f4bbd7ecabd7")
+	)
+	(junction
+		(at 227.33 39.37)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "f96c5c92-ec67-4db9-9c76-c1eab85c1aca")
+	)
+	(junction
+		(at 35.56 109.22)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "fc687e94-62b9-4825-b2f9-9f2ae6df70cc")
+	)
+	(junction
+		(at 77.47 107.95)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "ff9f47ce-20b0-4b89-8d53-db04eb56a344")
+	)
+	(wire
+		(pts
+			(xy 223.52 48.26) (xy 227.33 48.26)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "00275d64-d0ed-48bf-9eb8-fba77d94c6f5")
+	)
+	(wire
+		(pts
+			(xy 227.33 48.26) (xy 227.33 46.99)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "00b530d9-1508-4694-b55c-09973544f3a0")
+	)
+	(wire
+		(pts
+			(xy 220.98 60.96) (xy 223.52 60.96)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "02af5ce4-ae55-4013-86fb-510a4c41b7bc")
+	)
+	(wire
+		(pts
+			(xy 46.99 99.06) (xy 46.99 100.33)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "02c11aea-8446-46f7-981f-d6ba1ec08462")
+	)
+	(wire
+		(pts
+			(xy 177.8 19.05) (xy 177.8 21.59)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "03c30410-751a-4dd5-b9ec-b2cd7b318eea")
+	)
+	(wire
+		(pts
+			(xy 101.6 106.68) (xy 101.6 107.95)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "0463e8c8-08e8-4e0b-96b3-281f1ae6a6e7")
+	)
+	(wire
+		(pts
+			(xy 101.6 19.05) (xy 170.18 19.05)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "04f2dced-d8b5-4cfa-a03b-fe676c894840")
+	)
+	(wire
+		(pts
+			(xy 24.13 57.15) (xy 24.13 64.77)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "06869cff-0083-4519-a6fc-d37b25c9c985")
+	)
+	(wire
+		(pts
+			(xy 109.22 96.52) (xy 109.22 107.95)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "099f1eb6-2f94-49e0-98fa-118864a57722")
+	)
+	(wire
+		(pts
+			(xy 160.02 49.53) (xy 137.16 49.53)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "0b69bcbb-79ef-433f-b9db-171f935da6c5")
+	)
+	(wire
+		(pts
+			(xy 281.94 40.64) (xy 281.94 41.91)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "0c56e16a-0c65-41d6-9f88-e01052f1b072")
+	)
+	(wire
+		(pts
+			(xy 170.18 21.59) (xy 170.18 19.05)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "0ebde269-1aa4-4d93-9fab-f39a9729193b")
+	)
+	(wire
+		(pts
+			(xy 242.57 81.28) (xy 242.57 73.66)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "144523e3-74b0-4dbb-8d21-f2c81612fa56")
+	)
+	(wire
+		(pts
+			(xy 132.08 30.48) (xy 116.84 30.48)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "16ff9d92-14fe-4d5d-8737-575244b5a92f")
+	)
+	(wire
+		(pts
+			(xy 46.99 99.06) (xy 58.42 99.06)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "1b8a4657-0f55-4f9f-b0f9-3daf87b784de")
+	)
+	(wire
+		(pts
+			(xy 140.97 36.83) (xy 160.02 36.83)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "1b903384-819f-49ac-8e28-29d81edc8ee0")
+	)
+	(wire
+		(pts
+			(xy 71.12 19.05) (xy 71.12 64.77)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "1ca21dd8-ff0a-4139-9a4c-13329b988806")
+	)
+	(wire
+		(pts
+			(xy 241.3 78.74) (xy 241.3 72.39)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "1dd53032-9ddf-466f-9227-b42444ff0cc1")
+	)
+	(wire
+		(pts
+			(xy 71.12 73.66) (xy 58.42 73.66)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "1e2a49ea-fb5a-42e1-be4b-d160cc73b8d3")
+	)
+	(wire
+		(pts
+			(xy 261.62 33.02) (xy 271.78 33.02)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "1f62dfc7-05be-4cb4-804e-3441b7570cdb")
+	)
+	(wire
+		(pts
+			(xy 59.69 64.77) (xy 55.88 64.77)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "22ced6bf-6d1c-4fcd-817d-cd71d25be358")
+	)
+	(wire
+		(pts
+			(xy 222.25 78.74) (xy 241.3 78.74)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "2400addb-d850-452a-89b3-39d8b1fee386")
+	)
+	(wire
+		(pts
+			(xy 214.63 24.13) (xy 212.09 24.13)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "269f6576-8105-42ed-ac07-4c0318a746ed")
+	)
+	(wire
+		(pts
+			(xy 71.12 19.05) (xy 101.6 19.05)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "26b61ef7-e205-4899-8d03-c513b7126e48")
+	)
+	(wire
+		(pts
+			(xy 83.82 96.52) (xy 83.82 107.95)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "26db2fc7-1ed1-4971-89cc-46bd25b48b45")
+	)
+	(wire
+		(pts
+			(xy 140.97 13.97) (xy 78.74 13.97)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "26f8bf0e-d994-407d-8b0b-c42dc160efe4")
+	)
+	(wire
+		(pts
+			(xy 104.14 73.66) (xy 104.14 77.47)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "28038d6e-bb0b-4610-92a2-e0ec9e4596b1")
+	)
+	(wire
+		(pts
+			(xy 227.33 21.59) (xy 259.08 21.59)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "2c745630-f8c7-4289-b8c4-41aa4a852476")
+	)
+	(wire
+		(pts
+			(xy 190.5 96.52) (xy 109.22 96.52)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "2c989b8e-b248-40d4-b5e1-4a3a11a08984")
+	)
+	(wire
+		(pts
+			(xy 82.55 80.01) (xy 138.43 80.01)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "2cb9cd32-05e3-4907-8e5a-841a586a90ff")
+	)
+	(wire
+		(pts
+			(xy 220.98 24.13) (xy 223.52 24.13)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "2dee5db3-4f2c-423f-b1e4-0f83d271e900")
+	)
+	(wire
+		(pts
+			(xy 271.78 15.24) (xy 270.51 15.24)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "2faa114c-8767-4bba-9e54-9b95f5820b98")
+	)
+	(wire
+		(pts
+			(xy 35.56 109.22) (xy 35.56 107.95)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "30f99f88-7872-4445-8c70-11137426c070")
+	)
+	(wire
+		(pts
+			(xy 91.44 30.48) (xy 81.28 30.48)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "31570a0c-e3a6-4f96-94d2-7b2850e81012")
+	)
+	(wire
+		(pts
+			(xy 58.42 73.66) (xy 58.42 99.06)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "34d177f6-d86b-4e1d-81de-a740997d9621")
+	)
+	(wire
+		(pts
+			(xy 220.98 39.37) (xy 227.33 39.37)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "34eab7c5-40d6-490c-b2f4-961868b0afea")
+	)
+	(wire
+		(pts
+			(xy 259.08 58.42) (xy 259.08 62.23)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "365adee6-92e7-40f6-a68d-fe43188ac898")
+	)
+	(wire
+		(pts
+			(xy 30.48 52.07) (xy 35.56 52.07)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "3849bc31-1ede-41f3-b242-f05b06797bb9")
+	)
+	(wire
+		(pts
+			(xy 46.99 99.06) (xy 35.56 99.06)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "3bf6ba79-a0c7-4558-a581-58fb505e1faa")
+	)
+	(wire
+		(pts
+			(xy 55.88 19.05) (xy 55.88 52.07)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "3c2bef79-22d4-4702-b7e1-fefb59b9d2ad")
+	)
+	(wire
+		(pts
+			(xy 209.55 39.37) (xy 214.63 39.37)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "3caee8a2-e17d-473c-ae86-bdeb48c4bfe7")
+	)
+	(wire
+		(pts
+			(xy 46.99 110.49) (xy 46.99 113.03)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "3d2e894d-9afc-4cb4-9d30-0ebc6665bcca")
+	)
+	(wire
+		(pts
+			(xy 66.04 19.05) (xy 71.12 19.05)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "3df99ace-4cd8-4959-89a3-44f9e2b9db17")
+	)
+	(wire
+		(pts
+			(xy 77.47 107.95) (xy 83.82 107.95)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "40720465-f871-4601-932a-e484b10a0a49")
+	)
+	(wire
+		(pts
+			(xy 198.12 74.93) (xy 198.12 88.9)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "4272a700-1229-457f-a9ab-9e625f99c987")
+	)
+	(wire
+		(pts
+			(xy 104.14 77.47) (xy 172.72 77.47)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "436a2ec8-e77a-4876-9125-179d3f423308")
+	)
+	(wire
+		(pts
+			(xy 58.42 19.05) (xy 55.88 19.05)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "467ce36f-1cae-40ed-9240-4023a0811359")
+	)
+	(wire
+		(pts
+			(xy 223.52 29.21) (xy 227.33 29.21)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "469f2b49-1517-4386-8bdc-d59a0f8f401e")
+	)
+	(wire
+		(pts
+			(xy 91.44 48.26) (xy 81.28 48.26)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "47a91b18-4bc3-4aee-a287-ff886448b4bf")
+	)
+	(wire
+		(pts
+			(xy 259.08 24.13) (xy 281.94 24.13)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "49c4b10a-0022-4d3c-bc64-78e204d10d7f")
+	)
+	(wire
+		(pts
+			(xy 69.85 99.06) (xy 77.47 99.06)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "49e82b60-fb07-443a-b4b4-88d24cec75e0")
+	)
+	(wire
+		(pts
+			(xy 222.25 81.28) (xy 242.57 81.28)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "4de2c596-3a20-405b-80b5-7701bc8351da")
+	)
+	(wire
+		(pts
+			(xy 175.26 74.93) (xy 198.12 74.93)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "4de9cb73-8f5b-4b1c-a562-9ad92a7ef413")
+	)
+	(wire
+		(pts
+			(xy 78.74 33.02) (xy 91.44 33.02)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "506b97b6-a037-4683-8bd5-b158f292d585")
+	)
+	(wire
+		(pts
+			(xy 58.42 99.06) (xy 69.85 99.06)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "511c5a52-d20f-4bac-b9f0-19432ad5cbe8")
+	)
+	(wire
+		(pts
+			(xy 201.93 74.93) (xy 212.09 74.93)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "516c7281-904d-4dfa-b755-99779fa88a90")
+	)
+	(wire
+		(pts
+			(xy 271.78 12.7) (xy 271.78 15.24)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "52c28442-a481-4fbb-a47d-4ae109a5d53a")
+	)
+	(wire
+		(pts
+			(xy 220.98 58.42) (xy 227.33 58.42)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "53a39abc-5ca3-4c44-b79b-f13dd219a01d")
+	)
+	(wire
+		(pts
+			(xy 185.42 52.07) (xy 209.55 52.07)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "55042969-ad2b-45c1-9b80-926dd4bc5412")
+	)
+	(wire
+		(pts
+			(xy 55.88 88.9) (xy 116.84 88.9)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "5611b717-c447-4eed-9f40-2b761f226a27")
+	)
+	(wire
+		(pts
+			(xy 271.78 67.31) (xy 227.33 67.31)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "56b03317-799d-40d0-8cff-37953c81e951")
+	)
+	(wire
+		(pts
+			(xy 214.63 55.88) (xy 201.93 55.88)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "576ab859-11a3-4722-8dcb-04a8bf1f315a")
+	)
+	(wire
+		(pts
+			(xy 127 78.74) (xy 214.63 78.74)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "59272a07-8efe-44b6-9af1-a83be07dd80e")
+	)
+	(wire
+		(pts
+			(xy 83.82 107.95) (xy 85.09 107.95)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "5a674ccc-def6-4480-a64d-b8e070aa187d")
+	)
+	(wire
+		(pts
+			(xy 261.62 36.83) (xy 261.62 33.02)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "5afe7cea-5551-4f51-805c-65599c1ea99f")
+	)
+	(wire
+		(pts
+			(xy 73.66 96.52) (xy 83.82 96.52)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "5c46cf5c-0892-40d6-9e43-f0ec5572cab9")
+	)
+	(wire
+		(pts
+			(xy 60.96 96.52) (xy 60.96 105.41)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "5e2b8875-d719-432b-a109-6cf64604892f")
+	)
+	(wire
+		(pts
+			(xy 281.94 24.13) (xy 281.94 20.32)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "5e608a20-38ac-4cc4-8cf9-ca52883432da")
+	)
+	(wire
+		(pts
+			(xy 201.93 36.83) (xy 201.93 55.88)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "5f89c458-8991-4527-897d-539a5fe9ecd5")
+	)
+	(wire
+		(pts
+			(xy 214.63 36.83) (xy 201.93 36.83)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "5fc601f5-a448-4f03-9d08-aa84e2d868eb")
+	)
+	(wire
+		(pts
+			(xy 259.08 90.17) (xy 259.08 91.44)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "62bc86c5-b002-4e12-aad6-a38a8c075070")
+	)
+	(wire
+		(pts
+			(xy 261.62 41.91) (xy 261.62 39.37)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "6444ce6d-dbf6-4b49-89dc-660278c0c682")
+	)
+	(wire
+		(pts
+			(xy 204.47 21.59) (xy 214.63 21.59)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "65856e4a-ad04-485c-9e8a-c0f1efc60c6a")
+	)
+	(wire
+		(pts
+			(xy 212.09 74.93) (xy 212.09 60.96)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "65e5650d-edda-4aab-aa9b-bc480382127e")
+	)
+	(wire
+		(pts
+			(xy 222.25 83.82) (xy 242.57 83.82)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "66a6bcb8-3e06-48c1-8ebd-6cff07d2a46c")
+	)
+	(wire
+		(pts
+			(xy 46.99 107.95) (xy 46.99 110.49)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "66c076c6-1ac6-4d16-bbb1-c059d27734e2")
+	)
+	(wire
+		(pts
+			(xy 60.96 105.41) (xy 57.15 105.41)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "67a12148-36b3-4dfe-b320-785efe8b20f8")
+	)
+	(wire
+		(pts
+			(xy 220.98 36.83) (xy 261.62 36.83)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "691cd58b-747f-4e4b-9685-9479984915c7")
+	)
+	(wire
+		(pts
+			(xy 204.47 46.99) (xy 204.47 21.59)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "69bc1017-7258-42a4-a060-51121e47182d")
+	)
+	(wire
+		(pts
+			(xy 101.6 121.92) (xy 101.6 118.11)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "6b3bec07-38b0-4b3e-a142-5d57f4ca804a")
+	)
+	(wire
+		(pts
+			(xy 220.98 19.05) (xy 256.54 19.05)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "6ba57728-abfc-4f11-a729-1f50c59ae690")
+	)
+	(wire
+		(pts
+			(xy 35.56 99.06) (xy 35.56 100.33)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "6ca847b3-1ee2-40cc-9448-72ed66e2123c")
+	)
+	(wire
+		(pts
+			(xy 91.44 50.8) (xy 82.55 50.8)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "6cf85cfa-a149-4701-a3ce-45722a5f570f")
+	)
+	(wire
+		(pts
+			(xy 177.8 19.05) (xy 201.93 19.05)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "6f856e2f-cbae-4f6a-bb49-4b7b4db88e90")
+	)
+	(wire
+		(pts
+			(xy 81.28 48.26) (xy 81.28 81.28)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "73cdee2d-8e9a-46d7-8daa-b278a5048923")
+	)
+	(wire
+		(pts
+			(xy 24.13 52.07) (xy 24.13 44.45)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "742cf66a-14bd-46d8-b7b5-24374ffca14d")
+	)
+	(wire
+		(pts
+			(xy 214.63 83.82) (xy 201.93 83.82)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "74afbf68-1151-4624-8298-ccb70d59585e")
+	)
+	(wire
+		(pts
+			(xy 135.89 15.24) (xy 135.89 39.37)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "75b777cf-c629-4fec-bdfa-01ea16dd3ae9")
+	)
+	(wire
+		(pts
+			(xy 260.35 55.88) (xy 260.35 52.07)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "77781609-48d4-4c33-9f27-d500e13ac9c3")
+	)
+	(wire
+		(pts
+			(xy 67.31 64.77) (xy 71.12 64.77)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "783f70d5-6149-4c8c-a18b-77ee53f4b806")
+	)
+	(wire
+		(pts
+			(xy 81.28 15.24) (xy 135.89 15.24)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "78a51805-6b70-48f9-ac10-40fa37faffab")
+	)
+	(wire
+		(pts
+			(xy 77.47 99.06) (xy 101.6 99.06)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "7b6f79ba-2473-4c2d-bd68-857349977ddc")
+	)
+	(wire
+		(pts
+			(xy 81.28 81.28) (xy 137.16 81.28)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "7bb07e94-4a7f-4887-ad5f-517113619fa6")
+	)
+	(wire
+		(pts
+			(xy 35.56 121.92) (xy 46.99 121.92)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "7c80e742-3af3-4310-bc29-97cb8a52676a")
+	)
+	(wire
+		(pts
+			(xy 201.93 19.05) (xy 201.93 36.83)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "7fd2587f-5a3c-44d7-ab0f-43465faf2eb3")
+	)
+	(wire
+		(pts
+			(xy 109.22 107.95) (xy 101.6 107.95)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "81442dc2-7324-4929-8bf5-29f7fb148575")
+	)
+	(wire
+		(pts
+			(xy 185.42 46.99) (xy 204.47 46.99)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "817dfdb5-e717-4ba5-916e-26e388a2f228")
+	)
+	(wire
+		(pts
+			(xy 46.99 121.92) (xy 46.99 120.65)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "86041855-b5e5-44ab-9518-41f1b378622f")
+	)
+	(wire
+		(pts
+			(xy 271.78 48.26) (xy 227.33 48.26)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "8683f02c-4842-42d6-b191-a6b27823b5f6")
+	)
+	(wire
+		(pts
+			(xy 212.09 41.91) (xy 212.09 60.96)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "88aa4609-30dd-4f26-9201-bfafb209992a")
+	)
+	(wire
+		(pts
+			(xy 271.78 27.94) (xy 271.78 29.21)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "88b823b6-281f-4694-bd32-ac709fea7f20")
+	)
+	(wire
+		(pts
+			(xy 154.94 81.28) (xy 214.63 81.28)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "89b601cf-35bf-4e41-ad4a-5228a30c4016")
+	)
+	(wire
+		(pts
+			(xy 160.02 62.23) (xy 132.08 62.23)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "8b20b2db-5240-43ac-90a3-10db5a67c9ff")
+	)
+	(wire
+		(pts
+			(xy 92.71 107.95) (xy 101.6 107.95)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "8d5df313-3e2f-4600-bda8-867c51398834")
+	)
+	(wire
+		(pts
+			(xy 223.52 24.13) (xy 223.52 29.21)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "8d674f74-df66-44fe-bff5-5a83c6e30a30")
+	)
+	(wire
+		(pts
+			(xy 227.33 29.21) (xy 271.78 29.21)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "8e0f786e-640b-4ef8-b337-1933579127de")
+	)
+	(wire
+		(pts
+			(xy 69.85 121.92) (xy 101.6 121.92)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "911b9de9-940b-4145-bbaf-e193975a3b3a")
+	)
+	(wire
+		(pts
+			(xy 57.15 109.22) (xy 35.56 109.22)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "914c17da-5140-4020-9544-e3b05974bcee")
+	)
+	(wire
+		(pts
+			(xy 185.42 49.53) (xy 209.55 49.53)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "929b148b-9c8f-437f-882f-5f5f17ae4cc6")
+	)
+	(wire
+		(pts
+			(xy 223.52 66.04) (xy 227.33 66.04)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "93ba83fb-f78b-484d-8479-9a05ac99ccc8")
+	)
+	(wire
+		(pts
+			(xy 154.94 46.99) (xy 154.94 81.28)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "9485f969-5c04-4fca-b60e-389401d57810")
+	)
+	(wire
+		(pts
+			(xy 227.33 67.31) (xy 227.33 66.04)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "97d54ce6-0ae3-449d-a61b-509fbcadf88c")
+	)
+	(wire
+		(pts
+			(xy 256.54 12.7) (xy 271.78 12.7)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "97e7e372-a169-46a6-b50d-6e498ad8e37d")
+	)
+	(wire
+		(pts
+			(xy 24.13 64.77) (xy 35.56 64.77)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "9824c743-f118-4c19-ac9a-8bf1d2e27a32")
+	)
+	(wire
+		(pts
+			(xy 185.42 31.75) (xy 190.5 31.75)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "9a052e33-d1ce-4f34-91b6-d9df8017bf15")
+	)
+	(wire
+		(pts
+			(xy 281.94 41.91) (xy 261.62 41.91)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "9b9a843d-c4e4-478e-a891-7b72ffcf7ee0")
+	)
+	(wire
+		(pts
+			(xy 281.94 59.69) (xy 281.94 62.23)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "9b9ae690-27df-4956-88c1-2f151e8b56fb")
+	)
+	(wire
+		(pts
+			(xy 57.15 105.41) (xy 57.15 109.22)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "9bab6e9a-d748-4a44-80f5-c21c829c39e3")
+	)
+	(wire
+		(pts
+			(xy 223.52 41.91) (xy 223.52 48.26)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "9c9fb880-433f-431e-ab36-a5d1396c2630")
+	)
+	(wire
+		(pts
+			(xy 223.52 60.96) (xy 223.52 66.04)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "9ce5ebf1-1523-407b-8d60-971f1cb9cd59")
+	)
+	(wire
+		(pts
+			(xy 220.98 21.59) (xy 227.33 21.59)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "9d18c64c-8489-4f2c-834d-99f9775781d1")
+	)
+	(wire
+		(pts
+			(xy 116.84 88.9) (xy 198.12 88.9)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "9fa83464-1246-4713-aef4-f0bbd7084567")
+	)
+	(wire
+		(pts
+			(xy 172.72 77.47) (xy 172.72 74.93)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "a10c05c8-6a6d-4e82-b3cc-e114e348014d")
+	)
+	(wire
+		(pts
+			(xy 24.13 44.45) (xy 30.48 44.45)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "a32c2d46-a97f-43a5-9f0f-1935f0121079")
+	)
+	(wire
+		(pts
+			(xy 260.35 52.07) (xy 271.78 52.07)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "a68dbb29-014a-4d28-b584-badeadeb99f4")
+	)
+	(wire
+		(pts
+			(xy 227.33 39.37) (xy 261.62 39.37)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "a6bc8b4b-fa58-4d0b-a081-978fbaf3ae53")
+	)
+	(wire
+		(pts
+			(xy 138.43 80.01) (xy 138.43 52.07)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "a71cf992-941f-4bc3-a39e-5fbf081219b0")
+	)
+	(wire
+		(pts
+			(xy 55.88 64.77) (xy 55.88 88.9)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "a720034d-7017-476b-a7a4-228833d04c50")
+	)
+	(wire
+		(pts
+			(xy 227.33 58.42) (xy 259.08 58.42)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "a91d2288-3ec6-45bb-a651-dcbb978fb9d7")
+	)
+	(wire
+		(pts
+			(xy 220.98 41.91) (xy 223.52 41.91)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "a94e453f-695d-4ebd-a743-63cb7e110884")
+	)
+	(wire
+		(pts
+			(xy 71.12 64.77) (xy 71.12 73.66)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "aa041aba-9f13-466e-b109-fcabe00bcc12")
+	)
+	(wire
+		(pts
+			(xy 201.93 19.05) (xy 214.63 19.05)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "abe2d8b2-75ce-498f-a4a4-23047fb4f85a")
+	)
+	(wire
+		(pts
+			(xy 209.55 49.53) (xy 209.55 39.37)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "ad2e965c-0ab4-44a1-a6c2-9667c36fa3da")
+	)
+	(wire
+		(pts
+			(xy 116.84 88.9) (xy 116.84 121.92)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "af022ddc-6e9f-436c-90a4-b1f4dbdc06dc")
+	)
+	(wire
+		(pts
+			(xy 256.54 19.05) (xy 256.54 12.7)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "af82f2ff-a85d-44d1-b552-16bed0dc29f6")
+	)
+	(wire
+		(pts
+			(xy 46.99 121.92) (xy 69.85 121.92)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b066d03d-f90b-49ae-8420-279f8c3ff74e")
+	)
+	(wire
+		(pts
+			(xy 198.12 74.93) (xy 201.93 74.93)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b0e6fe00-28c7-4705-afe7-5db1271c5f3d")
+	)
+	(wire
+		(pts
+			(xy 220.98 55.88) (xy 260.35 55.88)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b13b7c06-4961-4353-bae4-e4d1d0684c4c")
+	)
+	(wire
+		(pts
+			(xy 209.55 58.42) (xy 214.63 58.42)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b2ea5a34-9058-427e-917d-05c0bd761633")
+	)
+	(wire
+		(pts
+			(xy 66.04 96.52) (xy 60.96 96.52)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b37ef673-31cd-431b-84bc-d1e17796ad5c")
+	)
+	(wire
+		(pts
+			(xy 76.2 107.95) (xy 77.47 107.95)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b3848b06-6b7b-4dc4-8790-087bce3e253e")
+	)
+	(wire
+		(pts
+			(xy 77.47 106.68) (xy 77.47 107.95)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b3b0f549-79e3-4337-b34d-1993e4126996")
+	)
+	(wire
+		(pts
+			(xy 212.09 41.91) (xy 214.63 41.91)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b5b444f8-f0f1-4ddc-8151-506f4e0e0384")
+	)
+	(wire
+		(pts
+			(xy 60.96 110.49) (xy 46.99 110.49)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b72c01e8-7623-4d1d-9a95-c73d5138796c")
+	)
+	(wire
+		(pts
+			(xy 81.28 30.48) (xy 81.28 15.24)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b8c5c4be-1a60-4bad-91b2-d6fc61e299d0")
+	)
+	(wire
+		(pts
+			(xy 242.57 73.66) (xy 259.08 73.66)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "bd7f0bc1-2dca-4abf-ba7f-6183f6fbb8c8")
+	)
+	(wire
+		(pts
+			(xy 135.89 39.37) (xy 160.02 39.37)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "c11c5791-5b57-4174-a9c6-50bdd0279a44")
+	)
+	(wire
+		(pts
+			(xy 137.16 49.53) (xy 137.16 81.28)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "c4433300-2c50-4eb7-8859-fc64d76973ac")
+	)
+	(wire
+		(pts
+			(xy 132.08 62.23) (xy 132.08 30.48)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "c4ca21fe-12d5-4afc-8375-de1a207419a0")
+	)
+	(wire
+		(pts
+			(xy 140.97 36.83) (xy 140.97 13.97)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "c5302559-2c99-44f7-a075-11b58882d884")
+	)
+	(wire
+		(pts
+			(xy 82.55 50.8) (xy 82.55 80.01)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "c5555889-bc08-4f73-8f12-7cfa58969a11")
+	)
+	(wire
+		(pts
+			(xy 109.22 20.32) (xy 127 20.32)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "c56cbb36-4c67-4fd9-bd67-0acd290089b0")
+	)
+	(wire
+		(pts
+			(xy 35.56 120.65) (xy 35.56 121.92)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "cd7cb85b-900a-457e-acc2-aee6cc51b638")
+	)
+	(wire
+		(pts
+			(xy 78.74 13.97) (xy 78.74 33.02)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "d3e0eb28-50f0-411c-adfb-61c7fa8293dd")
+	)
+	(wire
+		(pts
+			(xy 116.84 121.92) (xy 101.6 121.92)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "d4c1dbc6-4fd1-45af-aad0-ffb342c8c6dd")
+	)
+	(wire
+		(pts
+			(xy 55.88 57.15) (xy 55.88 64.77)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "d90623eb-0542-4106-84b7-f81eb53b4529")
+	)
+	(wire
+		(pts
+			(xy 241.3 72.39) (xy 257.81 72.39)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "d9d87078-1b38-4920-b765-8e7cd5159ad1")
+	)
+	(wire
+		(pts
+			(xy 242.57 91.44) (xy 259.08 91.44)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "da284e81-cbee-4928-a30b-932eac72f245")
+	)
+	(wire
+		(pts
+			(xy 35.56 109.22) (xy 35.56 113.03)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "dca94713-a6d8-4207-9e80-72ac92c9bcd1")
+	)
+	(wire
+		(pts
+			(xy 259.08 73.66) (xy 259.08 74.93)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "e01f0ffd-631b-4bd4-98e4-7bab3653a9f4")
+	)
+	(wire
+		(pts
+			(xy 201.93 83.82) (xy 201.93 74.93)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "e2499baf-38f9-49a5-bb08-7e3b318bce62")
+	)
+	(wire
+		(pts
+			(xy 101.6 19.05) (xy 101.6 20.32)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "e584a56d-7ce8-456a-90b6-5ee00867ff85")
+	)
+	(wire
+		(pts
+			(xy 190.5 31.75) (xy 190.5 96.52)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "e5d48f88-806e-47fa-a0fc-33c9272d5b4c")
+	)
+	(wire
+		(pts
+			(xy 127 20.32) (xy 127 78.74)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "e7c4aa95-de7e-45fe-953a-05119284ad48")
+	)
+	(wire
+		(pts
+			(xy 212.09 60.96) (xy 214.63 60.96)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "e9e4ad69-f347-4deb-b3f4-966d739167d8")
+	)
+	(wire
+		(pts
+			(xy 138.43 52.07) (xy 160.02 52.07)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "eee1f10a-ab22-47e9-86fe-b2ac2a3baa9d")
+	)
+	(wire
+		(pts
+			(xy 259.08 62.23) (xy 281.94 62.23)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "effc3dda-dfae-4606-84b9-ec201160d1e4")
+	)
+	(wire
+		(pts
+			(xy 69.85 99.06) (xy 69.85 100.33)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f19010a7-4c49-4eea-b822-b921a355a9b9")
+	)
+	(wire
+		(pts
+			(xy 101.6 110.49) (xy 101.6 107.95)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f1c67130-103e-4dd4-9e01-fa7ca2c7d636")
+	)
+	(wire
+		(pts
+			(xy 69.85 115.57) (xy 69.85 121.92)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f56931b0-17a2-4c22-a12d-fdee169c1730")
+	)
+	(wire
+		(pts
+			(xy 209.55 52.07) (xy 209.55 58.42)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f57d8785-0d1f-44d0-b688-c62ce4595e5b")
+	)
+	(wire
+		(pts
+			(xy 259.08 21.59) (xy 259.08 24.13)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f70f30ae-af17-4248-a5f4-997388e5bb32")
+	)
+	(wire
+		(pts
+			(xy 212.09 24.13) (xy 212.09 41.91)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f950b9e1-356f-4097-92c8-1d70709a0e2d")
+	)
+	(wire
+		(pts
+			(xy 160.02 46.99) (xy 154.94 46.99)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "fa09f4e8-e07b-4578-b430-bbdbf00e77ff")
+	)
+	(wire
+		(pts
+			(xy 242.57 83.82) (xy 242.57 91.44)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "fd558ad4-5122-430f-886f-d55d9c0d141e")
+	)
+	(wire
+		(pts
+			(xy 35.56 64.77) (xy 35.56 57.15)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "fedf9c05-b96c-45c8-923b-3612e8f8a135")
+	)
+	(symbol
+		(lib_id "Converter_ACDC:TMLM04109")
+		(at 45.72 54.61 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "00df4380-4857-4b29-bc83-7e7346e31b9a")
+		(property "Reference" "U4"
+			(at 45.72 44.45 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "TMLM04109"
+			(at 45.72 46.99 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Converter_ACDC:Converter_ACDC_TRACO_TMLM-04_THT"
+			(at 45.72 63.5 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" "https://www.tracopower.com/products/tmlm.pdf"
+			(at 45.72 54.61 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "9V 444mA AC/DC low noise power module"
+			(at 45.72 54.61 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "2"
+			(uuid "61af0f83-5499-409b-8932-1882eaa601f1")
+		)
+		(pin "6"
+			(uuid "cf2dbff0-c38d-4846-8948-6b9ee63965e8")
+		)
+		(pin "3"
+			(uuid "2d1e45a7-01bb-401b-86b8-d2bfeeead4dc")
+		)
+		(pin "5"
+			(uuid "f4c57d2a-6bbc-4e67-b207-4f166da95b69")
+		)
+		(instances
+			(project "2026_arduino_thermostat"
+				(path "/8ace7278-3313-4739-81ad-ae648dd0145c"
+					(reference "U4")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Comparator:LM393")
+		(at 72.39 107.95 0)
+		(unit 3)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "0920b467-fed2-4060-a09a-fc007491d07c")
+		(property "Reference" "U5"
+			(at 72.644 113.284 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "LM393"
+			(at 72.39 116.586 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Package_DIP:DIP-8_W7.62mm"
+			(at 72.39 107.95 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" "http://www.ti.com/lit/ds/symlink/lm393.pdf"
+			(at 72.39 107.95 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Low-Power, Low-Offset Voltage, Dual Comparators, DIP-8/SOIC-8/TO-99-8"
+			(at 72.39 107.95 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "fa3388fe-3572-45f7-95c6-6fe97fd74c37")
+		)
+		(pin "5"
+			(uuid "f5a1f612-a4ee-4a16-8fa4-ae60c94ef7bd")
+		)
+		(pin "6"
+			(uuid "93bae088-e689-44d1-8738-6caab54813d7")
+		)
+		(pin "7"
+			(uuid "ada95697-5779-4ad3-8537-0be896b6e664")
+		)
+		(pin "8"
+			(uuid "a090f1fe-6be6-47b8-859c-3f1f91cda1ea")
+		)
+		(pin "4"
+			(uuid "336b5f93-e117-4dc8-9bbd-ab84c91648fd")
+		)
+		(pin "2"
+			(uuid "1fa023c6-a1ac-4336-923d-2eb78a3c8fd1")
+		)
+		(pin "3"
+			(uuid "5990a5c6-d28e-430b-b8f1-92fa79161cea")
+		)
+		(instances
+			(project "2026_arduino_thermostat"
+				(path "/8ace7278-3313-4739-81ad-ae648dd0145c"
+					(reference "U5")
+					(unit 3)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 46.99 104.14 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "0d9eab65-3bca-4951-822e-094d1cfe1edd")
+		(property "Reference" "R1"
+			(at 49.53 102.8699 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "1k"
+			(at 49.53 105.4099 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Resistor_THT:R_Axial_DIN0204_L3.6mm_D1.6mm_P7.62mm_Horizontal"
+			(at 45.212 104.14 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 46.99 104.14 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Resistor"
+			(at 46.99 104.14 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "ee241b77-5f3d-40db-a6e2-cdadeb41a9cc")
+		)
+		(pin "2"
+			(uuid "f0b730fd-ab16-41ea-8994-2ff96d700273")
+		)
+		(instances
+			(project "2026_arduino_thermostat"
+				(path "/8ace7278-3313-4739-81ad-ae648dd0145c"
+					(reference "R1")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:Fuse")
+		(at 62.23 19.05 90)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "0f2204d7-e0d1-4e9b-8185-6694a9a97df1")
+		(property "Reference" "F3"
+			(at 62.23 12.7 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "Fuse"
+			(at 62.23 15.24 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Fuse:Fuseholder_Littelfuse_445_030_series_5x25mm"
+			(at 62.23 20.828 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 62.23 19.05 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Fuse"
+			(at 62.23 19.05 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "2"
+			(uuid "9ebd874f-e6b7-494f-999b-c824fae543e7")
+		)
+		(pin "1"
+			(uuid "c27fe3e6-26ea-4ad0-b7a1-f328c0deef90")
+		)
+		(instances
+			(project "2026_arduino_thermostat"
+				(path "/8ace7278-3313-4739-81ad-ae648dd0145c"
+					(reference "F3")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 101.6 102.87 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "19297e37-37e9-4483-ad27-4879903e1a74")
+		(property "Reference" "R6"
+			(at 104.14 101.5999 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "10k"
+			(at 104.14 104.1399 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Resistor_THT:R_Axial_DIN0204_L3.6mm_D1.6mm_P7.62mm_Horizontal"
+			(at 99.822 102.87 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 101.6 102.87 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Resistor"
+			(at 101.6 102.87 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "3dcd0010-0976-4db3-a5f9-cedc5082b8a6")
+		)
+		(pin "2"
+			(uuid "3c142474-4177-4f4c-9fb2-add9da85d4e4")
+		)
+		(instances
+			(project "2026_arduino_thermostat"
+				(path "/8ace7278-3313-4739-81ad-ae648dd0145c"
+					(reference "R6")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 69.85 96.52 90)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "19db6a4f-a44c-4871-a7c6-7aff0ddd5f28")
+		(property "Reference" "R5"
+			(at 69.85 90.17 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "10k"
+			(at 69.85 92.71 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Resistor_THT:R_Axial_DIN0204_L3.6mm_D1.6mm_P7.62mm_Horizontal"
+			(at 69.85 98.298 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 69.85 96.52 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Resistor"
+			(at 69.85 96.52 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "d078032e-b503-446a-82d9-c8d174de763e")
+		)
+		(pin "2"
+			(uuid "52e09a39-03c0-4908-b801-e2b536680d0e")
+		)
+		(instances
+			(project "2026_arduino_thermostat"
+				(path "/8ace7278-3313-4739-81ad-ae648dd0145c"
+					(reference "R5")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Sensor_Temperature:LM35-LP")
+		(at 271.78 40.64 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "26aba3e9-d13f-41e0-a16f-f0333871899f")
+		(property "Reference" "U2"
+			(at 262.89 39.3699 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Value" "MCP9700A"
+			(at 262.89 41.9099 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Footprint" "Package_TO_SOT_THT:TO-92_Inline"
+			(at 273.05 46.99 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Datasheet" "http://www.ti.com/lit/ds/symlink/lm35.pdf"
+			(at 271.78 40.64 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Precision centigrade temperature sensor, TO-92"
+			(at 271.78 40.64 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "bd2c6152-35f8-4047-973e-55be0a91be72")
+		)
+		(pin "3"
+			(uuid "d601cd77-b791-49a6-8edd-eca23dcc04bc")
+		)
+		(pin "2"
+			(uuid "1616282d-4dfa-4a66-b92e-74b443ff9f90")
+		)
+		(instances
+			(project "2026_arduino_thermostat"
+				(path "/8ace7278-3313-4739-81ad-ae648dd0145c"
+					(reference "U2")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 35.56 104.14 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "5a4f7301-c9a7-4cc4-986a-df3cc8e1e3db")
+		(property "Reference" "R3"
+			(at 38.1 102.8699 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "1k2"
+			(at 38.1 105.4099 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Resistor_THT:R_Axial_DIN0204_L3.6mm_D1.6mm_P7.62mm_Horizontal"
+			(at 33.782 104.14 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 35.56 104.14 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Resistor"
+			(at 35.56 104.14 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "37d8a394-4918-48fa-9e4a-5d9f7ecffdc8")
+		)
+		(pin "2"
+			(uuid "538d1ddb-c4b5-411c-82b3-ed4656a15249")
+		)
+		(instances
+			(project "2026_arduino_thermostat"
+				(path "/8ace7278-3313-4739-81ad-ae648dd0145c"
+					(reference "R3")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Sensor_Temperature:LM35-LP")
+		(at 271.78 59.69 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "5dced5a1-0ca6-4326-9e11-9d527ec33193")
+		(property "Reference" "U3"
+			(at 262.89 58.4199 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Value" "MCP9700A"
+			(at 262.89 60.9599 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Footprint" "Package_TO_SOT_THT:TO-92_Inline"
+			(at 273.05 66.04 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Datasheet" "http://www.ti.com/lit/ds/symlink/lm35.pdf"
+			(at 271.78 59.69 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Precision centigrade temperature sensor, TO-92"
+			(at 271.78 59.69 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "1a5d1717-c77d-4b89-a641-ac3de1fff06b")
+		)
+		(pin "3"
+			(uuid "ff972914-3500-4898-a365-9b3ce87f0074")
+		)
+		(pin "2"
+			(uuid "e18f457a-000d-4e0b-8c93-2e0fa0a14331")
+		)
+		(instances
+			(project "2026_arduino_thermostat"
+				(path "/8ace7278-3313-4739-81ad-ae648dd0145c"
+					(reference "U3")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:C")
+		(at 227.33 25.4 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "73330386-3315-41b2-af51-76daaecacfc7")
+		(property "Reference" "C1"
+			(at 231.14 24.1299 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "100n"
+			(at 231.14 26.6699 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Capacitor_THT:C_Disc_D7.5mm_W4.4mm_P5.00mm"
+			(at 228.2952 29.21 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 227.33 25.4 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Unpolarized capacitor"
+			(at 227.33 25.4 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "c71c64ad-b8c7-459b-9796-38288e01d71f")
+		)
+		(pin "2"
+			(uuid "7b926964-bd2a-466e-a875-aaff86dbb750")
+		)
+		(instances
+			(project "2026_arduino_thermostat"
+				(path "/8ace7278-3313-4739-81ad-ae648dd0145c"
+					(reference "C1")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "MCU_Module:Arduino_UNO_R3")
+		(at 172.72 46.99 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "75b6e5ac-0839-46a2-a579-3b4cc1267664")
+		(property "Reference" "A2"
+			(at 179.9433 19.05 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "Arduino_UNO_R3"
+			(at 179.9433 21.59 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Module:Arduino_UNO_R3"
+			(at 172.72 46.99 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+			)
+		)
+		(property "Datasheet" "https://www.arduino.cc/en/Main/arduinoBoardUno"
+			(at 172.72 46.99 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Arduino UNO Microcontroller Module, release 3"
+			(at 172.72 46.99 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "16"
+			(uuid "207f2a01-62da-4711-b8b2-e7761f6c5365")
+		)
+		(pin "5"
+			(uuid "fef39f55-62f0-4893-a34c-e1961fe605c2")
+		)
+		(pin "20"
+			(uuid "3e381d67-6d98-42bd-9dfd-b49a5b4d6e58")
+		)
+		(pin "10"
+			(uuid "b2e5b3e7-add7-4a0b-a520-24ff19fc17cf")
+		)
+		(pin "11"
+			(uuid "3c40a8d1-57bb-4102-8ebd-bcccc42ffb83")
+		)
+		(pin "12"
+			(uuid "204ebbbf-f82a-493a-9849-e2e04288f022")
+		)
+		(pin "18"
+			(uuid "f586fa6a-d04a-462a-ac1f-15a83d904267")
+		)
+		(pin "1"
+			(uuid "e4836ad3-faeb-498b-8958-c088c7323ec8")
+		)
+		(pin "2"
+			(uuid "eb3ad3c9-a3a7-47c4-9e1c-9582c5be8779")
+		)
+		(pin "15"
+			(uuid "16f66871-277e-4697-9769-eba4dbfd1811")
+		)
+		(pin "9"
+			(uuid "81edd60c-1d0a-46aa-a563-bdeb1df9f2dd")
+		)
+		(pin "3"
+			(uuid "eab4abfc-7543-4353-802d-0080db3a87f8")
+		)
+		(pin "4"
+			(uuid "c084ed57-0c0c-4dc1-95be-74f5ea9ee7dd")
+		)
+		(pin "6"
+			(uuid "bf1869a5-b6b9-48c9-98d8-b5b6412b6471")
+		)
+		(pin "14"
+			(uuid "8cf4f8cf-79b7-4930-b126-73170ad263c5")
+		)
+		(pin "8"
+			(uuid "a7872a9c-b8ab-429e-ac15-b69d69f42892")
+		)
+		(pin "13"
+			(uuid "f8b529d3-e7a5-4b9e-8057-eeb1e5ea9aa5")
+		)
+		(pin "7"
+			(uuid "2aa4d526-54b6-4b6e-9484-6cf99dcc0133")
+		)
+		(pin "19"
+			(uuid "2a19b4af-18e1-43c5-b117-74a68b47ac1a")
+		)
+		(pin "17"
+			(uuid "42e9e5a2-40a6-443a-b022-b35b79af01d9")
+		)
+		(pin "23"
+			(uuid "1c35a42b-944a-433d-acdd-79f859cca90f")
+		)
+		(pin "22"
+			(uuid "83be1a8d-e452-4331-8ab5-72253002c620")
+		)
+		(pin "24"
+			(uuid "9936a847-2366-4ef8-b4f0-75dd4e00a8dd")
+		)
+		(pin "25"
+			(uuid "b79c65bf-b37e-47d0-826f-1ca200817fb8")
+		)
+		(pin "21"
+			(uuid "811f3093-1d72-437d-b93a-6417381cabbc")
+		)
+		(pin "26"
+			(uuid "669a15c2-5397-4f32-a287-0ea0e059d9b2")
+		)
+		(pin "32"
+			(uuid "4b9f68dd-8744-45ba-841b-8911952407c0")
+		)
+		(pin "28"
+			(uuid "ec9be507-4dfa-4f46-aa1b-9a760c9f9c53")
+		)
+		(pin "27"
+			(uuid "e9b778cd-9416-47a4-81f7-4d0208c2c66f")
+		)
+		(pin "30"
+			(uuid "3a570959-0052-4ba9-b7ee-3198c0600c43")
+		)
+		(pin "29"
+			(uuid "a6be842c-31f1-40b4-98ba-76a1e339bcc9")
+		)
+		(pin "31"
+			(uuid "5ee8dacd-6b13-46f1-9e5d-4fedd53008be")
+		)
+		(instances
+			(project "2026_arduino_thermostat"
+				(path "/8ace7278-3313-4739-81ad-ae648dd0145c"
+					(reference "A2")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Sensor_Temperature:LM35-LP")
+		(at 271.78 20.32 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "75e6a79c-402c-4930-96c3-b5712152521c")
+		(property "Reference" "U1"
+			(at 262.89 19.0499 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Value" "MCP9700A"
+			(at 262.89 21.5899 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Footprint" "Package_TO_SOT_THT:TO-92_Inline"
+			(at 273.05 26.67 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Datasheet" "http://www.ti.com/lit/ds/symlink/lm35.pdf"
+			(at 271.78 20.32 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Precision centigrade temperature sensor, TO-92"
+			(at 271.78 20.32 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "a9cade3c-ecf7-4dc4-8f74-d691dd4f25c3")
+		)
+		(pin "3"
+			(uuid "ecd91b30-7fa7-4dfb-beb9-3df7260ea229")
+		)
+		(pin "2"
+			(uuid "e07ec3a2-b061-4499-9f44-27c183e8c702")
+		)
+		(instances
+			(project "2026_arduino_thermostat"
+				(path "/8ace7278-3313-4739-81ad-ae648dd0145c"
+					(reference "U1")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Comparator:LM393")
+		(at 69.85 138.43 0)
+		(unit 2)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "788b8eb6-c4a6-405d-92e5-41ff32fe5544")
+		(property "Reference" "U5"
+			(at 69.85 128.27 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "LM393"
+			(at 69.85 130.81 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Package_DIP:DIP-8_W7.62mm"
+			(at 69.85 138.43 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" "http://www.ti.com/lit/ds/symlink/lm393.pdf"
+			(at 69.85 138.43 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Low-Power, Low-Offset Voltage, Dual Comparators, DIP-8/SOIC-8/TO-99-8"
+			(at 69.85 138.43 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "fa3388fe-3572-45f7-95c6-6fe97fd74c37")
+		)
+		(pin "5"
+			(uuid "f5a1f612-a4ee-4a16-8fa4-ae60c94ef7bd")
+		)
+		(pin "6"
+			(uuid "93bae088-e689-44d1-8738-6caab54813d7")
+		)
+		(pin "7"
+			(uuid "ada95697-5779-4ad3-8537-0be896b6e664")
+		)
+		(pin "8"
+			(uuid "a090f1fe-6be6-47b8-859c-3f1f91cda1ea")
+		)
+		(pin "4"
+			(uuid "336b5f93-e117-4dc8-9bbd-ab84c91648fd")
+		)
+		(pin "2"
+			(uuid "1fa023c6-a1ac-4336-923d-2eb78a3c8fd1")
+		)
+		(pin "3"
+			(uuid "5990a5c6-d28e-430b-b8f1-92fa79161cea")
+		)
+		(instances
+			(project "2026_arduino_thermostat"
+				(path "/8ace7278-3313-4739-81ad-ae648dd0145c"
+					(reference "U5")
+					(unit 2)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector:Screw_Terminal_01x03")
+		(at 219.71 21.59 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "7b3e02e3-0f0c-43ad-b9a2-cd60ec92c333")
+		(property "Reference" "J1"
+			(at 222.504 13.208 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "Screw_Terminal_01x03"
+			(at 222.504 15.748 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Connector:Tag-Connect_TC2030-IDC-FP_2x03_P1.27mm_Vertical"
+			(at 219.71 21.59 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 219.71 21.59 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Generic screw terminal, single row, 01x03, script generated (kicad-library-utils/schlib/autogen/connector/)"
+			(at 219.71 21.59 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "3"
+			(uuid "02ac588e-efe7-40e0-9e9c-1c3acfc4a18b")
+		)
+		(pin "1"
+			(uuid "20cf7251-317a-4bdb-89c7-18989e4dad68")
+		)
+		(pin "2"
+			(uuid "d2542ba6-6184-417a-93b6-d71588958693")
+		)
+		(instances
+			(project "2026_arduino_thermostat"
+				(path "/8ace7278-3313-4739-81ad-ae648dd0145c"
+					(reference "J1")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 77.47 102.87 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "81a9c1c1-732f-4cbb-b230-a834e7636391")
+		(property "Reference" "R4"
+			(at 80.01 101.5999 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "1k"
+			(at 80.01 104.1399 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Resistor_THT:R_Axial_DIN0204_L3.6mm_D1.6mm_P7.62mm_Horizontal"
+			(at 75.692 102.87 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 77.47 102.87 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Resistor"
+			(at 77.47 102.87 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "9141b507-cccc-4c2b-a59c-d0dd51894031")
+		)
+		(pin "2"
+			(uuid "8d10e7a6-596d-4797-a865-aaba15e24c49")
+		)
+		(instances
+			(project "2026_arduino_thermostat"
+				(path "/8ace7278-3313-4739-81ad-ae648dd0145c"
+					(reference "R4")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:C")
+		(at 276.86 81.28 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "81aa6a99-43c5-4177-9f0a-392689a56e99")
+		(property "Reference" "C4"
+			(at 280.67 80.0099 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "100n 275V"
+			(at 280.67 82.5499 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" ""
+			(at 277.8252 85.09 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 276.86 81.28 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Unpolarized capacitor"
+			(at 276.86 81.28 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "0d354773-3d03-4830-a384-7d66d7efd914")
+		)
+		(pin "2"
+			(uuid "c53ffd16-0d44-4113-bf48-49fb50d9addc")
+		)
+		(instances
+			(project "2026_arduino_thermostat"
+				(path "/8ace7278-3313-4739-81ad-ae648dd0145c"
+					(reference "C4")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "MCU_Module:Arduino_UNO_R3")
+		(at 104.14 45.72 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "8f2ce016-8bf6-48f5-b519-ecc3b9a5bb78")
+		(property "Reference" "A1"
+			(at 111.3633 17.78 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "Arduino_UNO_WIFI_R4"
+			(at 111.3633 20.32 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Module:Arduino_UNO_R3"
+			(at 104.14 45.72 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+			)
+		)
+		(property "Datasheet" "https://www.arduino.cc/en/Main/arduinoBoardUno"
+			(at 104.14 45.72 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Arduino UNO Microcontroller Module, release 3"
+			(at 104.14 45.72 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "6"
+			(uuid "f940f65e-5f46-430d-aa69-2ab51a62958c")
+		)
+		(pin "13"
+			(uuid "f6ac76df-ab60-4c5e-b836-a621cf3748ba")
+		)
+		(pin "15"
+			(uuid "4afeba64-6fb9-4266-b7cb-40243069ce9b")
+		)
+		(pin "18"
+			(uuid "90d869c0-1905-44d2-a0bd-eeb79acd1655")
+		)
+		(pin "20"
+			(uuid "e34cf69d-92b6-4747-872b-fbe8de0fb6f8")
+		)
+		(pin "22"
+			(uuid "038fcfad-8978-49f7-8718-264f9213c483")
+		)
+		(pin "3"
+			(uuid "93b2c78a-fabc-4ac6-8499-7228f04517d3")
+		)
+		(pin "7"
+			(uuid "d9f5d08d-88de-4851-b273-18b9afd82576")
+		)
+		(pin "17"
+			(uuid "e3dce30e-f4c7-423a-a273-3ae0cc871aea")
+		)
+		(pin "26"
+			(uuid "c0e2a447-fe5e-485f-8a41-4a1fa63492e1")
+		)
+		(pin "8"
+			(uuid "9a8b2f92-68d7-4a6a-b108-1ba26c246f56")
+		)
+		(pin "5"
+			(uuid "d0c82830-d4ae-46a5-8d0e-28a09bfd1aa5")
+		)
+		(pin "9"
+			(uuid "137fd0a0-a36b-4a73-bf75-b7491f1b7799")
+		)
+		(pin "4"
+			(uuid "ad96f730-8370-4851-8c1b-ba47b55a26d8")
+		)
+		(pin "11"
+			(uuid "6e8fdc43-0688-4e64-9cd5-90ae14feb111")
+		)
+		(pin "12"
+			(uuid "9e30f5f2-72b0-4282-a871-9ee716184a54")
+		)
+		(pin "1"
+			(uuid "ea3e19a0-b397-4945-a253-f9ef525bddd9")
+		)
+		(pin "2"
+			(uuid "6f7eeed6-b82a-48b3-9f39-322d9d92e00e")
+		)
+		(pin "10"
+			(uuid "33c02ccb-118d-430f-a91f-0d29bcaa4e8e")
+		)
+		(pin "14"
+			(uuid "dd98a7e6-47d3-4e09-a6a1-f77a71f9be5a")
+		)
+		(pin "16"
+			(uuid "6a44f316-0d4a-40e6-bfee-96fe6fc28a75")
+		)
+		(pin "19"
+			(uuid "8e9656d8-ff3a-445b-ad00-5635d68e5f3b")
+		)
+		(pin "21"
+			(uuid "238d8e77-c458-407d-bddd-9f1cb1e89075")
+		)
+		(pin "23"
+			(uuid "73fbe817-9146-4c47-b764-da54d48b0212")
+		)
+		(pin "24"
+			(uuid "d816451d-a9af-48cf-9099-9e96257dbcf3")
+		)
+		(pin "25"
+			(uuid "35b81b8b-a77d-44d4-a94f-36f724ae1f48")
+		)
+		(pin "29"
+			(uuid "e29b614e-8daa-4080-879f-83177813955b")
+		)
+		(pin "32"
+			(uuid "65412b78-03f3-4330-8970-10a3f17ce088")
+		)
+		(pin "28"
+			(uuid "2125262c-f10b-4377-a482-568c5f894e58")
+		)
+		(pin "30"
+			(uuid "eb5ff566-00fb-4f96-ac68-282df9286a43")
+		)
+		(pin "27"
+			(uuid "f26fa940-3124-460b-8812-3d1fa556ee52")
+		)
+		(pin "31"
+			(uuid "ad1d4b20-815e-4b52-9800-8753cd0dc8ed")
+		)
+		(instances
+			(project "2026_arduino_thermostat"
+				(path "/8ace7278-3313-4739-81ad-ae648dd0145c"
+					(reference "A1")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector:Screw_Terminal_01x03")
+		(at 219.71 58.42 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "8fb11766-10dc-4ea0-ade5-b0c19cc518e2")
+		(property "Reference" "J3"
+			(at 218.948 49.784 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "Screw_Terminal_01x03"
+			(at 218.948 52.324 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Connector:Tag-Connect_TC2030-IDC-FP_2x03_P1.27mm_Vertical"
+			(at 219.71 58.42 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 219.71 58.42 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Generic screw terminal, single row, 01x03, script generated (kicad-library-utils/schlib/autogen/connector/)"
+			(at 219.71 58.42 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "3"
+			(uuid "88d1bb3b-6265-4b65-8c9a-75b38251589c")
+		)
+		(pin "1"
+			(uuid "d453f9d5-790c-42a3-99f3-698c2a06f898")
+		)
+		(pin "2"
+			(uuid "8985ca57-1635-44b0-8b93-d78fe6214d42")
+		)
+		(instances
+			(project "2026_arduino_thermostat"
+				(path "/8ace7278-3313-4739-81ad-ae648dd0145c"
+					(reference "J3")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:C")
+		(at 227.33 62.23 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "9e4ced21-e4d0-4b69-9474-56f489a10fbe")
+		(property "Reference" "C3"
+			(at 231.14 60.9599 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "100n"
+			(at 231.14 63.4999 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Capacitor_THT:C_Disc_D7.5mm_W4.4mm_P5.00mm"
+			(at 228.2952 66.04 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 227.33 62.23 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Unpolarized capacitor"
+			(at 227.33 62.23 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "278ab853-fdeb-43a4-b0bc-36d62703cb99")
+		)
+		(pin "2"
+			(uuid "f8b06aab-5c54-4c6d-94fb-a4cc83d3a3de")
+		)
+		(instances
+			(project "2026_arduino_thermostat"
+				(path "/8ace7278-3313-4739-81ad-ae648dd0145c"
+					(reference "C3")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Comparator:LM393")
+		(at 68.58 107.95 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "9fd39951-83d1-421f-920a-74ff7b9b5a0e")
+		(property "Reference" "U5"
+			(at 56.896 100.584 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "LM393"
+			(at 56.896 103.124 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Package_DIP:DIP-8_W7.62mm"
+			(at 68.58 107.95 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" "http://www.ti.com/lit/ds/symlink/lm393.pdf"
+			(at 68.58 107.95 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Low-Power, Low-Offset Voltage, Dual Comparators, DIP-8/SOIC-8/TO-99-8"
+			(at 68.58 107.95 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "fa3388fe-3572-45f7-95c6-6fe97fd74c37")
+		)
+		(pin "5"
+			(uuid "f5a1f612-a4ee-4a16-8fa4-ae60c94ef7bd")
+		)
+		(pin "6"
+			(uuid "93bae088-e689-44d1-8738-6caab54813d7")
+		)
+		(pin "7"
+			(uuid "ada95697-5779-4ad3-8537-0be896b6e664")
+		)
+		(pin "8"
+			(uuid "a090f1fe-6be6-47b8-859c-3f1f91cda1ea")
+		)
+		(pin "4"
+			(uuid "336b5f93-e117-4dc8-9bbd-ab84c91648fd")
+		)
+		(pin "2"
+			(uuid "1fa023c6-a1ac-4336-923d-2eb78a3c8fd1")
+		)
+		(pin "3"
+			(uuid "5990a5c6-d28e-430b-b8f1-92fa79161cea")
+		)
+		(instances
+			(project "2026_arduino_thermostat"
+				(path "/8ace7278-3313-4739-81ad-ae648dd0145c"
+					(reference "U5")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:C")
+		(at 227.33 43.18 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "a2075c67-e6af-4338-a0a3-dc96f1a92511")
+		(property "Reference" "C2"
+			(at 231.14 41.9099 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "100n"
+			(at 231.14 44.4499 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Capacitor_THT:C_Disc_D7.5mm_W4.4mm_P5.00mm"
+			(at 228.2952 46.99 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 227.33 43.18 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Unpolarized capacitor"
+			(at 227.33 43.18 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "12365625-5d76-48a1-9aeb-14a6d202c56c")
+		)
+		(pin "2"
+			(uuid "f8b898a6-d5e4-4ddd-9169-b8f7cecb88ad")
+		)
+		(instances
+			(project "2026_arduino_thermostat"
+				(path "/8ace7278-3313-4739-81ad-ae648dd0145c"
+					(reference "C2")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector:Screw_Terminal_01x03")
+		(at 19.05 54.61 180)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "a403d89d-36e0-4da0-888c-fbad1a291153")
+		(property "Reference" "J5"
+			(at 19.05 45.72 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "Screw_Terminal_01x03"
+			(at 19.05 48.26 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Connector:Tag-Connect_TC2030-IDC-FP_2x03_P1.27mm_Vertical"
+			(at 19.05 54.61 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 19.05 54.61 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Generic screw terminal, single row, 01x03, script generated (kicad-library-utils/schlib/autogen/connector/)"
+			(at 19.05 54.61 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "3"
+			(uuid "5fad5348-d15b-4769-80f3-12421dc2a39d")
+		)
+		(pin "1"
+			(uuid "bd46124b-d64d-42e2-a07e-18125dbfc21d")
+		)
+		(pin "2"
+			(uuid "9c0c3db6-abdf-4d52-8574-7b31d10cb896")
+		)
+		(instances
+			(project "2026_arduino_thermostat"
+				(path "/8ace7278-3313-4739-81ad-ae648dd0145c"
+					(reference "J5")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Diode:1N5818")
+		(at 88.9 107.95 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "a924ad66-fb8f-4c3c-9279-fe8e3c5ccc08")
+		(property "Reference" "D3"
+			(at 88.5825 101.6 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "1N5818"
+			(at 88.5825 104.14 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Diode_THT:D_DO-35_SOD27_P7.62mm_Horizontal"
+			(at 88.9 112.395 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" "http://www.vishay.com/docs/88525/1n5817.pdf"
+			(at 88.9 107.95 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "30V 1A Schottky Barrier Rectifier Diode, DO-41"
+			(at 88.9 107.95 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "2"
+			(uuid "bcbf2636-7eb9-42a9-8450-c1e201e38880")
+		)
+		(pin "1"
+			(uuid "c004f089-1c5a-4e49-a252-05574ef28c7d")
+		)
+		(instances
+			(project "2026_arduino_thermostat"
+				(path "/8ace7278-3313-4739-81ad-ae648dd0145c"
+					(reference "D3")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector:Screw_Terminal_01x03")
+		(at 219.71 39.37 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "b88d4e78-7801-4508-9e57-b1b53d7f3ba7")
+		(property "Reference" "J2"
+			(at 222.758 31.75 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "Screw_Terminal_01x03"
+			(at 222.758 34.29 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Connector:Tag-Connect_TC2030-IDC-FP_2x03_P1.27mm_Vertical"
+			(at 219.71 39.37 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 219.71 39.37 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Generic screw terminal, single row, 01x03, script generated (kicad-library-utils/schlib/autogen/connector/)"
+			(at 219.71 39.37 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "3"
+			(uuid "19d82fd8-a72f-40cb-b623-5298ed6aa3d5")
+		)
+		(pin "1"
+			(uuid "fb77d980-e768-45b1-839f-85d6cb5ad54f")
+		)
+		(pin "2"
+			(uuid "eea2f9c7-3632-4c97-987e-a03387996117")
+		)
+		(instances
+			(project "2026_arduino_thermostat"
+				(path "/8ace7278-3313-4739-81ad-ae648dd0145c"
+					(reference "J2")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Diode:BZV55B4V7")
+		(at 101.6 114.3 270)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "bb98396c-f9c4-4690-a1db-d75bbe973622")
+		(property "Reference" "D2"
+			(at 104.14 113.0299 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "BZV55B4V7"
+			(at 104.14 115.5699 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Diode_THT:D_A-405_P7.62mm_Horizontal"
+			(at 97.155 114.3 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" "https://assets.nexperia.com/documents/data-sheet/BZV55_SER.pdf"
+			(at 101.6 114.3 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "4.7V, 500mW, 2%, Zener diode, MiniMELF"
+			(at 101.6 114.3 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "f0f1d0af-a8d4-4385-b3f8-f863c229ed98")
+		)
+		(pin "2"
+			(uuid "69572608-166c-4b7f-8eba-59992d47e5f2")
+		)
+		(instances
+			(project "2026_arduino_thermostat"
+				(path "/8ace7278-3313-4739-81ad-ae648dd0145c"
+					(reference "D2")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:D")
+		(at 63.5 64.77 180)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "c656c05b-5bbb-48da-8dde-63bce91404c8")
+		(property "Reference" "D4"
+			(at 63.5 58.42 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "P600M"
+			(at 63.5 60.96 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Diode_THT:D_5W_P12.70mm_Horizontal"
+			(at 63.5 64.77 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 63.5 64.77 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Diode"
+			(at 63.5 64.77 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Sim.Device" "D"
+			(at 63.5 64.77 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Sim.Pins" "1=K 2=A"
+			(at 63.5 64.77 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "dfcf1575-0b6e-427a-9309-19d63ed75975")
+		)
+		(pin "2"
+			(uuid "28fabe9a-609c-4386-80d8-3c45fa2d3457")
+		)
+		(instances
+			(project "2026_arduino_thermostat"
+				(path "/8ace7278-3313-4739-81ad-ae648dd0145c"
+					(reference "D4")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:Fuse")
+		(at 30.48 48.26 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "cdcee90a-26a3-4f09-86d5-a0f0ea1411ec")
+		(property "Reference" "F1"
+			(at 33.02 46.9899 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "Fuse"
+			(at 33.02 49.5299 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Transistor_Power_Module:Littelfuse_Package_H_XBN2MM"
+			(at 28.702 48.26 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 30.48 48.26 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Fuse"
+			(at 30.48 48.26 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "2"
+			(uuid "5be3b7b5-d50a-491e-83c0-330d5f0e4716")
+		)
+		(pin "1"
+			(uuid "437c852f-de21-4b84-b9a4-d4b94b0a4741")
+		)
+		(instances
+			(project "2026_arduino_thermostat"
+				(path "/8ace7278-3313-4739-81ad-ae648dd0145c"
+					(reference "F1")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 35.56 116.84 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "ce757bfc-99d8-4dd2-9a63-e425639453c0")
+		(property "Reference" "R2"
+			(at 38.1 115.5699 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "1k"
+			(at 38.1 118.1099 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Resistor_THT:R_Axial_DIN0204_L3.6mm_D1.6mm_P7.62mm_Horizontal"
+			(at 33.782 116.84 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 35.56 116.84 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Resistor"
+			(at 35.56 116.84 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "0daa57ed-9a89-4f18-a39c-58cd7e094386")
+		)
+		(pin "2"
+			(uuid "a55e895b-ad50-4442-9c27-e7348d8c7a9b")
+		)
+		(instances
+			(project "2026_arduino_thermostat"
+				(path "/8ace7278-3313-4739-81ad-ae648dd0145c"
+					(reference "R2")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Diode:BZV55B3V9")
+		(at 46.99 116.84 270)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "dcf09c96-d663-4259-b643-1fa0f3f76979")
+		(property "Reference" "D1"
+			(at 49.53 115.5699 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "BZV55B3V9"
+			(at 49.53 118.1099 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Diode_THT:D_A-405_P7.62mm_Horizontal"
+			(at 42.545 116.84 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" "https://assets.nexperia.com/documents/data-sheet/BZV55_SER.pdf"
+			(at 46.99 116.84 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "3.9V, 500mW, 2%, Zener diode, MiniMELF"
+			(at 46.99 116.84 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "1723939f-8923-4d57-96a7-a0591432d372")
+		)
+		(pin "2"
+			(uuid "12ce825e-9206-450f-8df6-963368d94f53")
+		)
+		(instances
+			(project "2026_arduino_thermostat"
+				(path "/8ace7278-3313-4739-81ad-ae648dd0145c"
+					(reference "D1")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector:Screw_Terminal_01x03")
+		(at 219.71 81.28 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "f47da4b1-1c94-4349-8aab-a8e9ac1d7fff")
+		(property "Reference" "J4"
+			(at 218.694 72.898 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "Screw_Terminal_01x03"
+			(at 218.694 75.438 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Connector:Tag-Connect_TC2030-IDC-FP_2x03_P1.27mm_Vertical"
+			(at 219.71 81.28 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 219.71 81.28 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Generic screw terminal, single row, 01x03, script generated (kicad-library-utils/schlib/autogen/connector/)"
+			(at 219.71 81.28 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "3"
+			(uuid "8c135d02-6477-40d0-879b-3c173815b94c")
+		)
+		(pin "1"
+			(uuid "1ecd7242-e41c-4452-b3fd-557cff099239")
+		)
+		(pin "2"
+			(uuid "2585cf6f-73d6-44db-8085-eee12425c212")
+		)
+		(instances
+			(project "2026_arduino_thermostat"
+				(path "/8ace7278-3313-4739-81ad-ae648dd0145c"
+					(reference "J4")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(sheet_instances
+		(path "/"
+			(page "1")
+		)
+	)
+	(embedded_fonts no)
+)
